@@ -71,8 +71,9 @@ it will be styled to indicate that.
 
 ## Accessibility Notes
 
-- The `label` is used as the `aria-label` value for the navigation element, it should be
-  descriptive of the type of navigation contained.
+- The `label` attribute is used as the `aria-label` value for the navigation element. It should be
+  descriptive of the type of navigation contained. Note that it's optional, the default
+  value is "Pages In This Section".
 - If the links are based on very long page titles, consider using shortened versions in
   the navigation. Several line breaks in one link can be confusing.
 - Try and balance the length and depth of the navigation. A long list of links all on
