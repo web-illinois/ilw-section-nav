@@ -80,6 +80,17 @@ it will be styled to indicate that.
   the same level is hard to scan, but navigation deeper than 3 levels is also hard to
   use.
 
+## Upgrade Process
+
+When upgrading from the v2 toolkit component, the following changes are needed:
+
+- Rename all `il-section-nav` to `ilw-section-nav`.
+- Remove heading tags (`h2`, `h3`, etc.). The first link will be emphasized as the root of
+  the navigation.
+- Remove the top-level `ul` or `ol` tag that's directly under `ilw-section-nav`.
+- Replace all other `ul` or `ol` tags with `ilw-section-nav`.
+- Remove all `li` tags.
+
 ## External References
 
 - https://www.w3.org/WAI/tutorials/menus/structure/
