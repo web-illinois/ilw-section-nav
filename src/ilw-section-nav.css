@@ -1,0 +1,44 @@
+@layer base {
+    :root {
+        --ilw-section-nav--margin: 1.5em 0 0 0;
+
+        --ilw-section-nav--color: var(--il-blue);
+        --ilw-section-nav--color--focus: var(--il-blue);
+        --ilw-section-nav--color--hover: var(--il-altgeld);
+        --ilw-section-nav--color--active: var(--il-altgeld);
+        --ilw-section-nav--line-height: 2.75rem; /*var: Height of a nav element*/
+        --ilw-section-nav--level-padding: 0.9375rem; /*var: Left indentation for levels*/
+        --ilw-section-nav--level2-padding: 1.5625rem; /*var: Specific indentation for level 2 children*/
+        --ilw-section-nav--level0-font-size: 1.125rem; /*var: First level children font size*/
+        --ilw-section-nav--level1-font-size: 1rem; /*var: Font size for all deeper children*/
+        --ilw-section-nav--font-weight: 600; /*var: Font weight for menu items*/
+
+        --ilw-section-nav--item-padding: 0 10px 0 20px;
+
+        --ilw-section-nav--level1-border: 1px solid var(--il-storm-lighter-3);
+
+        --ilw-section-nav--root-font-size: 1.25rem;
+        --ilw-section-nav--root-background: var(--il-storm-lighter-4);
+        --ilw-section-nav--root-font-weight: 700;
+    }
+}
+
+ilw-section-nav {
+    a {
+        color: var(--ilw-section-nav--color);
+        text-decoration: var(--ilw-link--focused-background-color);
+        display: block;
+        padding: var(--ilw-section-nav--item-padding);
+
+        &[aria-current="page"] {
+            color: var(--ilw-section-nav--color--active);
+        }
+        &:hover {
+            text-decoration: underline;
+            color: var(--ilw-section-nav--color--hover);
+        }
+        &:focus {
+            color: var(--ilw-section-nav--color--focus);
+        }
+    }
+}

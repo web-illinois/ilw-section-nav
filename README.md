@@ -59,11 +59,11 @@ it will be styled to indicate that.
     <ilw-section-nav>
         <a href="#">Animal Sciences Major</a>
         <ilw-section-nav>
-            <a href="#" aria-current="page">Companion Animal Equine Science</a>
-            <a href="#">Food Animal Production and Management</a>
-            <a href="#">Science, Pre-Veterinary, and Medical</a>
+            <a href="#" aria-current="page">Pre-Veterinary and Medical</a>
+            <a href="#">Food Animal</a>
+            <a href="#">Companion Animal Equine</a>
         </ilw-section-nav>
-        <a href="#">Computer Science & Animal Science</a>
+        <a href="#">Computer & Animal Science</a>
         <a href="#">Some Third Thing</a>
     </ilw-section-nav>
 </ilw-section-nav>
