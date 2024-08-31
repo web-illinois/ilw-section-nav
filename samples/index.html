@@ -58,7 +58,7 @@
     <ilw-columns mode="1x3" gap="40px">
         <aside>
             <ilw-section-nav>
-                <a href="#" aria-current="page">Programs of Study</a>
+                <a href="#" class="ilw-section-nav--root" aria-current="page">Programs of Study</a>
                 <a href="#">Undergraduate Degrees</a>
                 <ilw-section-nav>
                     <a href="#">Animal Sciences Major</a>
@@ -81,19 +81,13 @@
                 </ilw-section-nav>
                 <a href="#">Undergraduate Degrees</a>
             </ilw-section-nav>
-            <ilw-section-nav collapse no-root>
-                <a href="#">Programs of Study</a>
-                <a href="#">Undergraduate Degrees</a>
-                <ilw-section-nav>
-                    <a href="#">Animal Sciences Major</a>
-                    <ilw-section-nav>
-                        <a href="#" aria-current="page">Pre-Veterinary and Medical</a>
-                        <a href="#">Food Animal</a>
-                        <a href="#">Companion Animal Equine</a>
-                    </ilw-section-nav>
-                    <a href="#">Computer & Animal Science</a>
-                    <a href="#">Some Third Thing</a>
-                </ilw-section-nav>
+            <ilw-section-nav collapse>
+                <div><a href="#" class="ilw-section-nav--root">Programs of Study</a></div>
+                <div><a href="#" aria-current="page">Undergraduate Degrees</a></div>
+                <div><ilw-section-nav>
+                    <div><a href="#">Animal Sciences Major</a></div>
+                    <div><a href="#">Computer & Animal Science</a></div>
+                </ilw-section-nav></div>
             </ilw-section-nav>
         </aside>
         <main>

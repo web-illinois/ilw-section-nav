@@ -20,7 +20,6 @@ The following attributes can be used:
 - `open="true"` and `open="false"` are bound to the open/collapsed state of the menu. 
 - `label` - the text shown when the menu is collapsed. The default value is
   "Pages In This Section". This is also used as the accessible label of the navigation.
-- `no-root` - prevent the first link from being emphasized as the root of the navigation.
 
 ### Current page
 
@@ -47,14 +46,15 @@ rule from [`ilw-section-nav.css`](./src/ilw-section-nav.css) to your CSS and adj
 
 ### Section Name Link
 
-Typically, the first link in the section navigation is the root page of the section, and by default
-it will be styled to indicate that.
+Typically, the first link in the section navigation is the root page of the section. Special
+styling can be added by giving the first link the class `ilw-section-nav--root`, as shown
+in the example below.
 
 ## Code Examples
 
 ```html
 <ilw-section-nav>
-    <a href="#">Programs of Study</a>
+    <a href="#" class="ilw-section-nav--root">Programs of Study</a>
     <a href="#">Undergraduate Degrees</a>
     <ilw-section-nav>
         <a href="#">Animal Sciences Major</a>

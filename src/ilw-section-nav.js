@@ -18,8 +18,8 @@ class SectionNav extends LitElement {
             open: { reflect: true },
             label: {},
             noRoot: { type: Boolean, attribute: "no-root" },
-            _isRoot: { state: true, type: Boolean },
-            _level: {state: true, type: Number}
+            isRoot: { type: Boolean, attribute: "is-root", reflect: true },
+            _level: { state: true, type: Number },
         };
     }
 
@@ -36,17 +36,17 @@ class SectionNav extends LitElement {
         this.open = "false";
         this.label = "Pages In This Section";
         this.noRoot = false;
-        this._isRoot = true;
+        this.isRoot = true;
         this._level = 0;
     }
 
     connectedCallback() {
-        super.connectedCallback()
+        super.connectedCallback();
         let parent = this.parentElement.closest("ilw-section-nav");
         if (!parent) {
-            this._isRoot = true;
+            this.isRoot = true;
         } else {
-            this._isRoot = false;
+            this.isRoot = false;
             this._level = parent._level + 1;
         }
     }
@@ -58,7 +58,7 @@ class SectionNav extends LitElement {
      */
     toggle(open = this.open) {
         if (open) {
-            if ( this.open === open) {
+            if (this.open === open) {
                 return;
             }
             this.open = open;
@@ -67,35 +67,37 @@ class SectionNav extends LitElement {
         } else {
             this.open = "true";
         }
-
     }
 
     render() {
         const ul = html`
             <ul class="section-nav-list section-nav-list--level-${this._level}">
-                ${map(
-                    Array.from(this.children),
-                    () =>
-                        html` <li class="section-nav-item">
-                            <slot></slot>
-                        </li>`,
-                )}
+                ${map(Array.from(this.children), (it, index) => {
+                    const classes = {
+                        "section-nav-item": true,
+                        "section-nav-item--root": index === 0 && this.isRoot 
+                    }
+                    return html`<li class=${classMap(classes)}>
+                        <slot></slot>
+                    </li>`;
+                })}
             </ul>
         `;
-        if (this._isRoot) {
+        if (this.isRoot) {
             const classes = {
                 "section-nav-top": true,
                 "force-collapse": this.collapse,
                 "style-root": !this.noRoot,
-                "open": this.open === "true"
-            }
-            return html`
-                <div class=${classMap(classes)}>
-                    <nav aria-labelledby="section-nav-toggle">
-                        <button id="section-nav-toggle" @click="${this.toggle}">${this.label}</button>
-                        ${ul}
-                    </nav>
-                </div>`
+                open: this.open === "true",
+            };
+            return html` <div class=${classMap(classes)}>
+                <nav aria-labelledby="section-nav-toggle">
+                    <button id="section-nav-toggle" @click="${this.toggle}">
+                        ${this.label}
+                    </button>
+                    ${ul}
+                </nav>
+            </div>`;
         }
         return ul;
     }

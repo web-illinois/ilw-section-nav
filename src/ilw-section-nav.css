@@ -13,7 +13,11 @@
         --ilw-section-nav--level1-font-size: 1rem; /*var: Font size for all deeper children*/
         --ilw-section-nav--font-weight: 600; /*var: Font weight for menu items*/
 
-        --ilw-section-nav--item-padding: 0 10px 0 20px;
+        --ilw-section-nav--item-padding-top: 0;
+        --ilw-section-nav--item-padding-right: 0.625rem;
+        --ilw-section-nav--item-padding-bottom: 0;
+        --ilw-section-nav--item-padding-left: 1.25rem;
+
 
         --ilw-section-nav--level1-border: 1px solid var(--il-storm-lighter-3);
 
@@ -28,17 +32,98 @@ ilw-section-nav {
         color: var(--ilw-section-nav--color);
         text-decoration: var(--ilw-link--focused-background-color);
         display: block;
-        padding: var(--ilw-section-nav--item-padding);
+        padding-top: var(--ilw-section-nav--item-padding-top);
+        padding-right: var(--ilw-section-nav--item-padding-right);
+        padding-bottom: var(--ilw-section-nav--item-padding-bottom);
+        padding-left: var(--ilw-section-nav--item-padding-left);
 
         &[aria-current="page"] {
             color: var(--ilw-section-nav--color--active);
         }
+
         &:hover {
             text-decoration: underline;
             color: var(--ilw-section-nav--color--hover);
         }
+
         &:focus {
             color: var(--ilw-section-nav--color--focus);
         }
+    }
+
+    /*
+    This is the best way I could come up with to keep increasing the indent while:
+     - not modifying the host page's DOM
+     - ensuring the `a` tag extends full width for styling
+     - allowing for extra div elements in the DOM from CMSes
+     */
+    ilw-section-nav {
+        a {
+            padding-left: calc(var(--ilw-section-nav--item-padding-left) + var(--ilw-section-nav--level-padding));
+        }
+
+        ilw-section-nav {
+            a {
+                padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                + var(--ilw-section-nav--level-padding)
+                + var(--ilw-section-nav--level2-padding));
+            }
+
+            ilw-section-nav {
+                a {
+                    padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                    + var(--ilw-section-nav--level-padding) * 2
+                    + var(--ilw-section-nav--level2-padding));
+                }
+
+                ilw-section-nav {
+                    a {
+                        padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                        + var(--ilw-section-nav--level-padding) * 3
+                        + var(--ilw-section-nav--level2-padding));
+                    }
+
+                    ilw-section-nav {
+                        a {
+                            padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                            + var(--ilw-section-nav--level-padding) * 4
+                            + var(--ilw-section-nav--level2-padding));
+                        }
+
+                        ilw-section-nav {
+                            a {
+                                padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                                + var(--ilw-section-nav--level-padding) * 5
+                                + var(--ilw-section-nav--level2-padding));
+                            }
+
+                            ilw-section-nav {
+                                a {
+                                    padding-left: calc(var(--ilw-section-nav--item-padding-left)
+                                    + var(--ilw-section-nav--level-padding) * 6
+                                    + var(--ilw-section-nav--level2-padding));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    To allow arbitrary child elements from CMSes, this selector applies
+    to all children of the top-most nav that are not another ilw-section nav
+    and don't have an ilw-section-nav descendant.
+     */
+    &[is-root] > *:not(:has(ilw-section-nav)):not(ilw-section-nav) {
+        border-top: var(--ilw-section-nav--level1-border);
+    }
+
+    a.ilw-section-nav--root {
+        font-size: var(--ilw-section-nav--root-font-size);
+        background: var(--ilw-section-nav--root-background);
+        font-weight: var(--ilw-section-nav--root-font-weight);
+        border-top: none;
     }
 }
