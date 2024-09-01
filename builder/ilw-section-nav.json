@@ -4,7 +4,7 @@
     "github": "https://github.com/web-illinois/ilw-section-nav/",
     "type": "web component",
     "element-name": "ilw-section-nav",
-    "description": "Description for builder.",
+    "description": "Secondary navigation for a section of a website.",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0.0-alpha"

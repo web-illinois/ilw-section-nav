@@ -18,7 +18,9 @@ The following attributes can be used:
 
 - `collapsed="true"` - make the menu always collapse regardless of viewport size.
 - `collapsed="false"` - prevent the menu from collapsing.
-- `open="true"` and `open="false"` are bound to the open/collapsed state of the menu.
+- `open="true"` and `open="false"` are bound to the open/collapsed state of the menu. That
+  means this updates dynamically when the user opens or closes the menu, so it can be used to
+  target styling.
 - `label` - the text shown when the menu is collapsed. The default value is
   "Pages In This Section". This is also used as the accessible label of the navigation.
 
@@ -61,10 +63,11 @@ in the example below.
         <a href="#">Animal Sciences Major</a>
         <ilw-section-nav>
             <a href="#" aria-current="page">Pre-Veterinary and Medical</a>
-            <a href="#">Food Animal</a>
             <a href="#">Companion Animal Equine</a>
         </ilw-section-nav>
-        <a href="#">Computer & Animal Science</a>
+    </ilw-section-nav>
+    <a href="#">Computer & Animal Science</a>
+    <ilw-section-nav>
         <a href="#">Some Third Thing</a>
     </ilw-section-nav>
 </ilw-section-nav>
@@ -78,16 +81,16 @@ in the example below.
 - If the links are based on very long page titles, consider using shortened versions in
   the navigation. Several line breaks in one link can be confusing.
 - Try and balance the length and depth of the navigation. A long list of links all on
-  the same level is hard to scan, but navigation deeper than 3 levels is also hard to
-  use.
+  the same level is hard to scan, but navigation deeper than 3 levels makes it difficult to
+  distinguish the hierarchy of the items.
 
 ## Upgrade Process
 
 When upgrading from the v2 toolkit component, the following changes are needed:
 
 - Rename all `il-section-nav` to `ilw-section-nav`.
-- Remove heading tags (`h2`, `h3`, etc.). The first link will be emphasized as the root of
-  the navigation.
+- Remove heading tags (`h2`, `h3`, etc.), and add `class="ilw-section-nav--root"` to the first
+  link instead.
 - Remove the top-level `ul` or `ol` tag that's directly under `ilw-section-nav`.
 - Replace all other `ul` or `ol` tags with `ilw-section-nav`.
 - Remove all `li` tags.

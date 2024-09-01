@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="-1741.7614" y="-2553.329" width="1079.9759" height="1920" transform="translate(391.5556 -2795.1025) rotate(-90)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-659.7743" y1="1239.8811" x2="-666.9972" y2="766.7834" gradientTransform="translate(908.2582 124.9197) scale(2.0465 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13294b"/>
+      <stop offset="1" stop-color="#0071ce"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-659.7743" y1="1492.5331" x2="-666.9971" y2="1019.4354" gradientTransform="translate(1086.91 556.2237) scale(2.0465 -1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-659.7742" y1="1745.1851" x2="-666.9971" y2="1272.0874" gradientTransform="translate(1265.5618 987.5278) scale(2.0465 -1)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-1">
+      <rect x=".012" y="-2133.3291" width="1079.9759" height="1079.9557" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-4" x1="-799.7651" y1="-85.3841" x2="-806.988" y2="-558.4818" gradientTransform="translate(3162.0981 -107.2852) scale(2.0465 1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="-799.7651" y1="167.2679" x2="-806.9879" y2="-305.8298" gradientTransform="translate(2983.4901 -538.6331) scale(2.0465 1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="-799.765" y1="419.92" x2="-806.9879" y2="-53.1778" gradientTransform="translate(2804.882 -969.9811) scale(2.0465 1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="-799.765" y1="672.572" x2="-806.9878" y2="199.4743" gradientTransform="translate(2626.2739 -1401.329) scale(2.0465 1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="-799.7649" y1="925.224" x2="-806.9878" y2="452.1263" gradientTransform="translate(2447.6659 -1832.6769) scale(2.0465 1)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-2">
+      <rect x="-1741.7614" y="1734.6623" width="1079.9759" height="1920" transform="translate(-3896.4357 1492.8889) rotate(-90)" fill="none"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect x=".019" y="2154.6623" width="1079.9759" height="1080" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-9" x1="368.5647" y1="-3065.9702" x2="361.3418" y2="-3539.068" gradientTransform="translate(-1011.576 5380.8777) scale(2.0465 1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c6c7"/>
+      <stop offset=".9807" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="368.5647" y1="-2813.3182" x2="361.3418" y2="-3286.4159" gradientTransform="translate(-1190.2281 4949.5738) scale(2.0465 1)" xlink:href="#linear-gradient-9"/>
+    <clipPath id="clippath-4">
+      <rect width="1079.9759" height="1079.969" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-11" x1="-373.3938" y1="-4068.9239" x2="-380.6166" y2="-4542.0216" gradientTransform="translate(2289.7262 6019.3414) scale(2.0465 1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff5f05"/>
+      <stop offset=".999" stop-color="#c84113"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="-373.3937" y1="-3816.2719" x2="-380.6166" y2="-4289.3696" gradientTransform="translate(2111.074 5588.0376) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-13" x1="-373.3937" y1="-3563.6199" x2="-380.6166" y2="-4036.7176" gradientTransform="translate(1932.4219 5156.7337) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-14" x1="-373.3936" y1="-3310.9679" x2="-380.6165" y2="-3784.0656" gradientTransform="translate(1753.7698 4725.4298) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-15" x1="-373.3936" y1="-3058.3158" x2="-380.6165" y2="-3531.4136" gradientTransform="translate(1575.1177 4294.1259) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-16" x1="-373.3936" y1="-2805.6638" x2="-380.6164" y2="-3278.7615" gradientTransform="translate(1396.4656 3862.822) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-17" x1="-375.9066" y1="-2552.9884" x2="-383.1295" y2="-3026.0861" gradientTransform="translate(1226.5767 3427.8415) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-18" x1="-375.9066" y1="-2300.3364" x2="-383.1295" y2="-2773.4341" gradientTransform="translate(1047.9246 2996.5376) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-19" x1="-375.9065" y1="-2047.6844" x2="-383.1294" y2="-2520.7821" gradientTransform="translate(869.2725 2565.2337) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-20" x1="-375.9065" y1="-1795.0323" x2="-383.1294" y2="-2268.1301" gradientTransform="translate(690.6204 2133.9298) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-21" x1="-375.9065" y1="-1542.3803" x2="-383.1293" y2="-2015.4781" gradientTransform="translate(511.9683 1702.626) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-22" x1="-375.9064" y1="-1289.7283" x2="-383.1293" y2="-1762.826" gradientTransform="translate(333.3162 1271.3221) scale(2.0465 1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-23" x1="540.007" y1="609.6297" x2="540.007" y2="-454.1167" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff5f05"/>
+      <stop offset=".4754" stop-color="#e4500b" stop-opacity=".5174"/>
+      <stop offset=".9994" stop-color="#c84113" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clippath-5">
+      <rect x="-1741.7614" y="-419.981" width="1079.9759" height="1920" transform="translate(-1741.7924 -661.7544) rotate(-90)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-24" x1="80.794" y1="-1840.1515" x2="73.5712" y2="-2313.2492" gradientTransform="translate(-1143.2738 -1347.7205) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-25" x1="80.7941" y1="-1587.4994" x2="73.5712" y2="-2060.5972" gradientTransform="translate(-964.622 -916.4164) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-26" x1="80.7941" y1="-1334.8474" x2="73.5713" y2="-1807.9451" gradientTransform="translate(-785.9702 -485.1124) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-27" x1="80.7942" y1="-1082.1954" x2="73.5713" y2="-1555.2931" gradientTransform="translate(-607.3184 -53.8083) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-28" x1="80.7942" y1="-829.5434" x2="73.5713" y2="-1302.6411" gradientTransform="translate(-428.6666 377.4958) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+    <linearGradient id="linear-gradient-29" x1="80.7942" y1="-576.8914" x2="73.5714" y2="-1049.9891" gradientTransform="translate(-250.0148 808.7998) scale(2.0465 -1)" xlink:href="#linear-gradient-11"/>
+  </defs>
+  <g clip-path="url(#clippath)">
+    <g>
+      <rect x="-1889.852" y="-1106.7912" width="2887.3541" height="252.652" transform="translate(-1454.9617 -1358.2658) rotate(135)" fill="url(#linear-gradient)"/>
+      <rect x="-1711.2001" y="-928.1392" width="2887.3541" height="252.652" transform="translate(-1023.6578 -1179.6135) rotate(135)" fill="url(#linear-gradient-2)"/>
+      <rect x="-1532.5482" y="-749.4871" width="2887.3541" height="252.652" transform="translate(-592.354 -1000.9613) rotate(135)" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+  <g clip-path="url(#clippath-1)">
+    <g>
+      <rect x="77.4964" y="-453.4916" width="2887.3541" height="252.652" transform="translate(2365.7863 -1633.9307) rotate(135.0141)" fill="url(#linear-gradient-4)"/>
+      <rect x="-101.1116" y="-632.1875" width="2887.3541" height="252.652" transform="translate(1934.5263 -1812.751) rotate(135.0141)" fill="url(#linear-gradient-5)"/>
+      <rect x="-279.7196" y="-810.8834" width="2887.3541" height="252.652" transform="translate(1503.2663 -1991.5713) rotate(135.0141)" fill="url(#linear-gradient-6)"/>
+      <rect x="-458.3276" y="-989.5793" width="2887.3541" height="252.652" transform="translate(1072.0063 -2170.3915) rotate(135.0141)" fill="url(#linear-gradient-7)"/>
+      <rect x="-636.9356" y="-1168.2752" width="2887.3541" height="252.652" transform="translate(640.7463 -2349.2118) rotate(135.0141)" fill="url(#linear-gradient-8)"/>
+    </g>
+  </g>
+  <g clip-path="url(#clippath-3)">
+    <g>
+      <rect x="-1705.1859" y="2054.0859" width="2887.3541" height="252.652" transform="translate(1095.3609 3907.1104) rotate(135)" fill="url(#linear-gradient-9)"/>
+      <rect x="-1883.838" y="1875.4341" width="2887.3541" height="252.652" transform="translate(664.0569 3728.4587) rotate(135)" fill="url(#linear-gradient-10)"/>
+    </g>
+  </g>
+  <g>
+    <g clip-path="url(#clippath-4)">
+      <g>
+        <rect x="77.6954" y="1689.5955" width="2887.3541" height="252.652" transform="translate(3881.1956 2024.1986) rotate(135)" fill="url(#linear-gradient-11)"/>
+        <rect x="-100.9567" y="1510.9437" width="2887.3541" height="252.652" transform="translate(3449.8916 1845.5469) rotate(135)" fill="url(#linear-gradient-12)"/>
+        <rect x="-279.6087" y="1332.2918" width="2887.3541" height="252.652" transform="translate(3018.5875 1666.8953) rotate(135)" fill="url(#linear-gradient-13)"/>
+        <rect x="-458.2608" y="1153.6399" width="2887.3541" height="252.652" transform="translate(2587.2834 1488.2436) rotate(135)" fill="url(#linear-gradient-14)"/>
+        <rect x="-636.9128" y="974.9881" width="2887.3541" height="252.652" transform="translate(2155.9794 1309.5919) rotate(135)" fill="url(#linear-gradient-15)"/>
+        <rect x="-815.5649" y="796.3362" width="2887.3541" height="252.652" transform="translate(1724.6753 1130.9402) rotate(135)" fill="url(#linear-gradient-16)"/>
+        <rect x="-990.5967" y="614.0311" width="2887.3541" height="252.652" transform="translate(1296.968 943.4922) rotate(135)" fill="url(#linear-gradient-17)"/>
+        <rect x="-1169.2488" y="435.3792" width="2887.3541" height="252.652" transform="translate(865.6639 764.8406) rotate(135)" fill="url(#linear-gradient-18)"/>
+        <rect x="-1347.9008" y="256.7273" width="2887.3541" height="252.652" transform="translate(434.3599 586.1889) rotate(135)" fill="url(#linear-gradient-19)"/>
+        <rect x="-1526.5529" y="78.0755" width="2887.3541" height="252.652" transform="translate(3.0558 407.5372) rotate(135)" fill="url(#linear-gradient-20)"/>
+        <rect x="-1705.2049" y="-100.5764" width="2887.3541" height="252.652" transform="translate(-428.2482 228.8855) rotate(135)" fill="url(#linear-gradient-21)"/>
+        <rect x="-1883.857" y="-279.2283" width="2887.3541" height="252.652" transform="translate(-859.5523 50.2339) rotate(135)" fill="url(#linear-gradient-22)"/>
+      </g>
+    </g>
+    <rect y=".0046" width="1080.0139" height="1079.969" fill="url(#linear-gradient-23)"/>
+  </g>
+  <g clip-path="url(#clippath-5)">
+    <g>
+      <rect x="-2425.8076" y="500.6007" width="2887.3541" height="252.652" transform="translate(-1233.2978 1764.7018) rotate(135)" fill="url(#linear-gradient-24)"/>
+      <rect x="-2247.1557" y="679.2527" width="2887.3541" height="252.652" transform="translate(-801.994 1943.3541) rotate(135)" fill="url(#linear-gradient-25)"/>
+      <rect x="-2068.5038" y="857.9048" width="2887.3541" height="252.652" transform="translate(-370.6901 2122.0063) rotate(135)" fill="url(#linear-gradient-26)"/>
+      <rect x="-1889.852" y="1036.5568" width="2887.3541" height="252.652" transform="translate(60.6138 2300.6586) rotate(135)" fill="url(#linear-gradient-27)"/>
+      <rect x="-1711.2001" y="1215.2088" width="2887.3541" height="252.652" transform="translate(491.9177 2479.3108) rotate(135)" fill="url(#linear-gradient-28)"/>
+      <rect x="-1532.5482" y="1393.8609" width="2887.3541" height="252.652" transform="translate(923.2216 2657.963) rotate(135)" fill="url(#linear-gradient-29)"/>
+    </g>
+  </g>
+</svg>

@@ -1,10 +1,10 @@
 {
     "name": "@illinois-toolkit/ilw-section-nav",
-    "description": "One paragraph description of the component.",
+    "description": "Illinois Toolkit: Secondary navigation for a section of a website.",
     "repository": "github:web-illinois/ilw-section-nav",
     "private": false,
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "1.0.0-alpha",
     "type": "module",
     "files": [
         "src/**",

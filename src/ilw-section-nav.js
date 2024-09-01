@@ -13,11 +13,9 @@ class SectionNav extends LitElement {
 
     static get properties() {
         return {
-            theme: {},
             collapse: { },
             open: { reflect: true },
             label: {},
-            noRoot: { type: Boolean, attribute: "no-root" },
             isRoot: { type: Boolean, attribute: "is-root", reflect: true },
             _level: { state: true, type: Number },
         };
@@ -31,11 +29,9 @@ class SectionNav extends LitElement {
 
     constructor() {
         super();
-        this.theme = "";
         this.collapse = null;
         this.open = "false";
         this.label = "Pages In This Section";
-        this.noRoot = false;
         this.isRoot = true;
         this._level = 0;
     }
@@ -82,7 +78,6 @@ class SectionNav extends LitElement {
                 "auto-collapse": !this.collapse,
                 "force-collapse": this.collapse === "true",
                 "prevent-collapse": this.collapse === "false",
-                "style-root": !this.noRoot,
                 "section-nav-full-width": !this.collapse,
                 open: this.open === "true",
             };
