@@ -57,7 +57,7 @@
 
     <ilw-columns mode="1x3" gap="40px">
         <aside>
-            <ilw-section-nav>
+            <ilw-section-nav open="true">
                 <a href="#" class="ilw-section-nav--root" aria-current="page">Programs of Study</a>
                 <a href="#">Undergraduate Degrees</a>
                 <ilw-section-nav>
@@ -81,7 +81,15 @@
                 </ilw-section-nav>
                 <a href="#">Undergraduate Degrees</a>
             </ilw-section-nav>
-            <ilw-section-nav collapse>
+            <ilw-section-nav collapse="false">
+                <div><a href="#" class="ilw-section-nav--root">Programs of Study</a></div>
+                <div><a href="#" aria-current="page">Undergraduate Degrees</a></div>
+                <div><ilw-section-nav>
+                    <div><a href="#">Animal Sciences Major</a></div>
+                    <div><a href="#">Computer & Animal Science</a></div>
+                </ilw-section-nav></div>
+            </ilw-section-nav>
+            <ilw-section-nav collapse="true">
                 <div><a href="#" class="ilw-section-nav--root">Programs of Study</a></div>
                 <div><a href="#" aria-current="page">Undergraduate Degrees</a></div>
                 <div><ilw-section-nav>

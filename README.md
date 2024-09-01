@@ -16,8 +16,9 @@ smaller screens, it collapsed to an expanding widget labeled "In This Section".
 
 The following attributes can be used:
 
-- `collapse` - make the menu always collapse regardless of viewport size.
-- `open="true"` and `open="false"` are bound to the open/collapsed state of the menu. 
+- `collapsed="true"` - make the menu always collapse regardless of viewport size.
+- `collapsed="false"` - prevent the menu from collapsing.
+- `open="true"` and `open="false"` are bound to the open/collapsed state of the menu.
 - `label` - the text shown when the menu is collapsed. The default value is
   "Pages In This Section". This is also used as the accessible label of the navigation.
 

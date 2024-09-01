@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import styles from "./ilw-section-nav.styles";
+import styles, { chevron } from "./ilw-section-nav.styles";
 import "./ilw-section-nav.css";
 import { ManualSlotController } from "./ManualSlotController.js";
 import { map } from "lit/directives/map.js";
@@ -14,7 +14,7 @@ class SectionNav extends LitElement {
     static get properties() {
         return {
             theme: {},
-            collapse: { type: Boolean },
+            collapse: { },
             open: { reflect: true },
             label: {},
             noRoot: { type: Boolean, attribute: "no-root" },
@@ -32,7 +32,7 @@ class SectionNav extends LitElement {
     constructor() {
         super();
         this.theme = "";
-        this.collapse = false;
+        this.collapse = null;
         this.open = "false";
         this.label = "Pages In This Section";
         this.noRoot = false;
@@ -53,16 +53,9 @@ class SectionNav extends LitElement {
 
     /**
      * Toggle between open and closed states when collapsed.
-     *
-     * @arg {"true" | "false" | undefined} open Provide the argument to force a specific state.
      */
-    toggle(open = this.open) {
-        if (open) {
-            if (this.open === open) {
-                return;
-            }
-            this.open = open;
-        } else if (this.open === "true") {
+    toggle() {
+        if (this.open === "true") {
             this.open = "false";
         } else {
             this.open = "true";
@@ -86,14 +79,18 @@ class SectionNav extends LitElement {
         if (this.isRoot) {
             const classes = {
                 "section-nav-top": true,
-                "force-collapse": this.collapse,
+                "auto-collapse": !this.collapse,
+                "force-collapse": this.collapse === "true",
+                "prevent-collapse": this.collapse === "false",
                 "style-root": !this.noRoot,
+                "section-nav-full-width": !this.collapse,
                 open: this.open === "true",
             };
             return html` <div class=${classMap(classes)}>
                 <nav aria-labelledby="section-nav-toggle">
-                    <button id="section-nav-toggle" @click="${this.toggle}">
+                    <button id="section-nav-toggle" type="button" @click="${this.toggle}">
                         ${this.label}
+                        ${chevron}
                     </button>
                     ${ul}
                 </nav>

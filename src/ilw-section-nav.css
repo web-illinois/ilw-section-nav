@@ -18,16 +18,18 @@
         --ilw-section-nav--item-padding-bottom: 0;
         --ilw-section-nav--item-padding-left: 1.25rem;
 
-
         --ilw-section-nav--level1-border: 1px solid var(--il-storm-lighter-3);
 
         --ilw-section-nav--root-font-size: 1.25rem;
         --ilw-section-nav--root-background: var(--il-storm-lighter-4);
         --ilw-section-nav--root-font-weight: 700;
+
+        --ilw-section-nav--toggle-font-size: 1rem;
     }
 }
 
 ilw-section-nav {
+    container-type: inline-size;
     a {
         color: var(--ilw-section-nav--color);
         text-decoration: var(--ilw-link--focused-background-color);
@@ -120,10 +122,16 @@ ilw-section-nav {
         border-top: var(--ilw-section-nav--level1-border);
     }
 
-    a.ilw-section-nav--root {
-        font-size: var(--ilw-section-nav--root-font-size);
-        background: var(--ilw-section-nav--root-background);
-        font-weight: var(--ilw-section-nav--root-font-weight);
-        border-top: none;
+    &[is-root] {
+        a.ilw-section-nav--root {
+            font-size: var(--ilw-section-nav--root-font-size);
+            background: var(--ilw-section-nav--root-background);
+            font-weight: var(--ilw-section-nav--root-font-weight);
+            border-top: none;
+        }
+        /* This removes the border if the root `a` tag isn't a direct child */
+        & > *:has(a.ilw-section-nav--root) {
+            border-top: none;
+        }
     }
 }
