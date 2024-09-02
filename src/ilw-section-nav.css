@@ -155,3 +155,109 @@ ilw-section-nav {
         }
     }
 }
+
+ilw-section-nav[mode="manual"] {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: var(--ilw-section-nav--line-height);
+        font-weight: var(--ilw-section-nav--font-weight);
+    }
+
+    & > ul {
+        font-size: var(--ilw-section-nav--level0-font-size);
+
+        & > li {
+            border-top: var(--ilw-section-nav--level1-border);
+
+            &:has(a.ilw-section-nav--root) {
+                border-top: none;
+            }
+        }
+
+        ul {
+            font-size: var(--ilw-section-nav--level1-font-size);
+        }
+    }
+
+    /*
+    This is the best way I could come up with to keep increasing the indent while:
+     - not modifying the host page's DOM
+     - ensuring the `a` tag extends full width for styling
+     - allowing for extra div elements in the DOM from CMSes
+     */
+    ul {
+        a {
+            padding-left: calc(var(--ilw-section-nav--item--padding-left) + var(--ilw-section-nav--level-padding));
+        }
+
+        ul {
+            a {
+                padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                + var(--ilw-section-nav--level-padding)
+                + var(--ilw-section-nav--level2-padding));
+            }
+
+            ul {
+                a {
+                    padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                    + var(--ilw-section-nav--level-padding) * 2
+                    + var(--ilw-section-nav--level2-padding));
+                }
+
+                ul {
+                    a {
+                        padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                        + var(--ilw-section-nav--level-padding) * 3
+                        + var(--ilw-section-nav--level2-padding));
+                    }
+
+                    ul {
+                        a {
+                            padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                            + var(--ilw-section-nav--level-padding) * 4
+                            + var(--ilw-section-nav--level2-padding));
+                        }
+
+                        ul {
+                            a {
+                                padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                                + var(--ilw-section-nav--level-padding) * 5
+                                + var(--ilw-section-nav--level2-padding));
+                            }
+
+                            ul {
+                                a {
+                                    padding-left: calc(var(--ilw-section-nav--item--padding-left)
+                                    + var(--ilw-section-nav--level-padding) * 6
+                                    + var(--ilw-section-nav--level2-padding));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .auto-collapse.section-nav-top {
+            margin-top: 0;
+            margin-bottom: var(--ilw-section-nav--collapsed--margin-bottom);
+            border-bottom: var(--ilw-section-nav--collapsed--border);
+        }
+
+        .auto-collapse #section-nav-toggle {
+            display: block;
+        }
+
+        & > ul {
+            display: none;
+        }
+
+        &[open="true"] > ul {
+            display: block;
+        }
+    }
+}

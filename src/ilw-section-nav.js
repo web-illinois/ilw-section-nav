@@ -13,6 +13,7 @@ class SectionNav extends LitElement {
 
     static get properties() {
         return {
+            mode: {},
             collapse: { },
             open: { reflect: true },
             label: {},
@@ -29,6 +30,7 @@ class SectionNav extends LitElement {
 
     constructor() {
         super();
+        this.mode = "";
         this.collapse = null;
         this.open = "false";
         this.label = "Pages In This Section";
@@ -59,6 +61,15 @@ class SectionNav extends LitElement {
     }
 
     render() {
+        if (this.mode === "manual") {
+            return this._renderManual();
+        } else {
+            return this._renderAutomatic();
+        }
+    }
+
+    _renderAutomatic() {
+
         let inner = [];
 
         for (let i = 0; i < this.children.length; i++) {
@@ -108,6 +119,27 @@ class SectionNav extends LitElement {
             </div>`;
         }
         return ul;
+    }
+
+    _renderManual() {
+        const classes = {
+            "section-nav-top": true,
+            "section-nav-manual": true,
+            "auto-collapse": !this.collapse,
+            "force-collapse": this.collapse === "true",
+            "prevent-collapse": this.collapse === "false",
+            "section-nav-full-width": !this.collapse,
+            open: this.open === "true",
+        };
+        return html` <div class=${classMap(classes)}>
+                <nav aria-labelledby="section-nav-toggle">
+                    <button id="section-nav-toggle" type="button" @click="${this.toggle}">
+                        ${this.label}
+                        ${chevron}
+                    </button>
+                    <slot></slot>
+                </nav>
+            </div>`;
     }
 }
 

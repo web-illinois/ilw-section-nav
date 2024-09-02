@@ -16,13 +16,16 @@ smaller screens, it collapsed to an expanding widget labeled "In This Section".
 
 The following attributes can be used:
 
-- `collapsed="true"` - make the menu always collapse regardless of viewport size.
-- `collapsed="false"` - prevent the menu from collapsing.
 - `open="true"` and `open="false"` are bound to the open/collapsed state of the menu. That
   means this updates dynamically when the user opens or closes the menu, so it can be used to
   target styling.
 - `label` - the text shown when the menu is collapsed. The default value is
   "Pages In This Section". This is also used as the accessible label of the navigation.
+
+The following can **only be used in automatic mode**:
+
+- `collapsed="true"` - make the menu always collapse regardless of viewport size.
+- `collapsed="false"` - prevent the menu from collapsing.
 
 ### Current page
 
@@ -37,6 +40,9 @@ for the user to distinguish between the different levels.
 
 Child links are added by including a nested `ilw-section-nav` tag with its own list of links, as
 shown in the example below.
+
+In `manual` mode, you can manage the `ul` and `li` tags in your code, in which case you can
+nest levels with `ul`. See the `manual` example below.
 
 ### Breakpoint for collapsed view
 
@@ -54,6 +60,10 @@ styling can be added by giving the first link the class `ilw-section-nav--root`,
 in the example below.
 
 ## Code Examples
+
+### Automatic Mode
+
+The default mode, where all the appropriate tags are managed by the component.
 
 ```html
 <ilw-section-nav>
@@ -73,6 +83,34 @@ in the example below.
 </ilw-section-nav>
 ```
 
+### Manual Mode
+
+In manual mode, a single `ilw-section-nav` is used, and the menu structure is managed
+manually.
+
+```html
+
+<ilw-section-nav mode="manual">
+    <ul>
+        <li><a href="/about" class="ilw-section-nav--root">About</a></li>
+        <li><a href="/about/dean">From the Dean</a></li>
+        <li><a href="/about/international-programs">International Programs</a></li>
+        <li>
+            <a href="/about/diversity-equity-inclusion" aria-current="page">Inclusion</a>
+            <ul>
+                <li>
+                    <a href="/about/inclusion/dei-goals">DEI Goals</a>
+                </li>
+                <li>
+                    <a href="/about/inclusion/student-supports">Student Supports</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/liac">Special Events</a></li>
+    </ul>
+</ilw-section-nav>
+```
+
 ## Accessibility Notes
 
 - The `label` attribute is used as the `aria-label` value for the navigation element. It should be
@@ -86,6 +124,13 @@ in the example below.
 
 ## Upgrade Process
 
+`il-section-nav` can be upgraded to either use the automatic mode, or the manual mode:
+
+- Automatic mode uses less HTML, but may be harder to use with CMSes.
+- Manual mode requires fewer changes, but may not support all new features.
+
+### Automatic Mode
+
 When upgrading from the v2 toolkit component, the following changes are needed:
 
 - Rename all `il-section-nav` to `ilw-section-nav`.
@@ -94,6 +139,14 @@ When upgrading from the v2 toolkit component, the following changes are needed:
 - Remove the top-level `ul` or `ol` tag that's directly under `ilw-section-nav`.
 - Replace all other `ul` or `ol` tags with `ilw-section-nav`.
 - Remove all `li` tags.
+
+### Manual Mode
+
+When upgrading with manual mode, the following changes are needed:
+
+- Rename all `<il-section-nav` to `<ilw-section-nav mode="manual`.
+- Remove heading tags (`h2`, `h3`, etc.), and add `class="ilw-section-nav--root"` to the first
+  link instead.
 
 ## External References
 
