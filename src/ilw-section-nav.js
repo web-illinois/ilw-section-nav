@@ -59,17 +59,33 @@ class SectionNav extends LitElement {
     }
 
     render() {
+        let inner = [];
+
+        for (let i = 0; i < this.children.length; i++) {
+            const classes = {
+                "section-nav-item": true,
+                "section-nav-item--root": i === 0 && this.isRoot
+            }
+
+            // Because the link and sub-nav need to be inside the same li element,
+            // we'll create two slots if needed for that.
+            const double = this.children.item(i + 1) && this.children.item(i + 1).tagName === "ILW-SECTION-NAV";
+            let slot;
+            if (double) {
+                slot = html`<slot></slot><slot></slot>`;
+                ++i;
+            } else {
+                slot = html`<slot></slot>`
+            }
+
+            inner.push(html`<li class=${classMap(classes)}>
+                        ${slot}
+                    </li>`);
+        }
+
         const ul = html`
             <ul class="section-nav-list section-nav-list--level-${this._level}">
-                ${map(Array.from(this.children), (it, index) => {
-                    const classes = {
-                        "section-nav-item": true,
-                        "section-nav-item--root": index === 0 && this.isRoot 
-                    }
-                    return html`<li class=${classMap(classes)}>
-                        <slot></slot>
-                    </li>`;
-                })}
+                ${inner}
             </ul>
         `;
         if (this.isRoot) {
