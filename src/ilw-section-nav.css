@@ -198,50 +198,51 @@ ilw-section-nav[mode="manual"] {
      - ensuring the `a` tag extends full width for styling
      - allowing for extra div elements in the DOM from CMSes
      */
+
     ul {
         a {
-            padding-left: calc(var(--ilw-section-nav--item--padding-left) + var(--ilw-section-nav--level-padding));
+            padding-left: var(--ilw-section-nav--item--padding-left);
         }
 
         ul {
             a {
                 padding-left: calc(var(--ilw-section-nav--item--padding-left)
                 + var(--ilw-section-nav--level-padding)
-                + var(--ilw-section-nav--level2-padding));
+                );
             }
 
             ul {
                 a {
                     padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                    + var(--ilw-section-nav--level-padding) * 2
+                    + var(--ilw-section-nav--level-padding)
                     + var(--ilw-section-nav--level2-padding));
                 }
 
                 ul {
                     a {
                         padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                        + var(--ilw-section-nav--level-padding) * 3
+                        + var(--ilw-section-nav--level-padding) * 2
                         + var(--ilw-section-nav--level2-padding));
                     }
 
                     ul {
                         a {
                             padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                            + var(--ilw-section-nav--level-padding) * 4
+                            + var(--ilw-section-nav--level-padding) * 3
                             + var(--ilw-section-nav--level2-padding));
                         }
 
                         ul {
                             a {
                                 padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                + var(--ilw-section-nav--level-padding) * 5
+                                + var(--ilw-section-nav--level-padding) * 4
                                 + var(--ilw-section-nav--level2-padding));
                             }
 
                             ul {
                                 a {
                                     padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                    + var(--ilw-section-nav--level-padding) * 6
+                                    + var(--ilw-section-nav--level-padding) * 5
                                     + var(--ilw-section-nav--level2-padding));
                                 }
                             }
