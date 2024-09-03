@@ -42,6 +42,7 @@
 
 ilw-section-nav {
     container-type: inline-size;
+
     a {
         color: var(--ilw-section-nav--color);
         text-decoration: var(--ilw-link--focused-background-color);
@@ -79,6 +80,7 @@ ilw-section-nav {
      - ensuring the `a` tag extends full width for styling
      - allowing for extra div elements in the DOM from CMSes
      */
+
     ilw-section-nav {
         a {
             padding-left: calc(var(--ilw-section-nav--item--padding-left) + var(--ilw-section-nav--level-padding));
@@ -138,6 +140,7 @@ ilw-section-nav {
     to all children of the top-most nav that are not another ilw-section nav
     and don't have an ilw-section-nav descendant.
      */
+
     &[is-root] > *:not(:has(ilw-section-nav)):not(ilw-section-nav) {
         border-top: var(--ilw-section-nav--level1-border);
     }
@@ -149,7 +152,9 @@ ilw-section-nav {
             font-weight: var(--ilw-section-nav--root--font-weight);
             border-top: none;
         }
+
         /* This removes the border if the root `a` tag isn't a direct child */
+
         & > *:has(a.ilw-section-nav--root) {
             border-top: none;
         }
@@ -163,11 +168,17 @@ ilw-section-nav[mode="manual"] {
         margin: 0;
         line-height: var(--ilw-section-nav--line-height);
         font-weight: var(--ilw-section-nav--font-weight);
+
+        li {
+            font-size: var(--ilw-section-nav--level0-font-size);
+
+            ul li {
+                font-size: var(--ilw-section-nav--level1-font-size);
+            }
+        }
     }
 
     & > ul {
-        font-size: var(--ilw-section-nav--level0-font-size);
-
         & > li {
             border-top: var(--ilw-section-nav--level1-border);
 

@@ -16,7 +16,7 @@
         {
             "name": "default",
             "description": "Default information",
-            "text": "<ul>\n    <li><a href=\"/about\" class=\"ilw-section-nav--root\">About</a></li>\n    <li><a href=\"/about/dean\">From the Dean</a></li>\n    <li><a href=\"/about/international-programs\">International Programs</a></li>\n    <li>\n        <a href=\"/about/diversity-equity-inclusion\" aria-current=\"page\">Inclusion</a>\n        <ul>\n            <li>\n                <a href=\"/about/inclusion/dei-goals\">DEI Goals</a>\n            </li>\n            <li>\n                <a href=\"/about/inclusion/student-supports\">Student Supports</a>\n            </li>\n        </ul>\n    </li>\n    <li><a href=\"/liac\">Special Events</a></li>\n</ul>"
+            "text": "<ul>\n    <li><a href=\"#\" class=\"ilw-section-nav--root\">Programs of Study</a></li>\n    <li><a href=\"#\">Undergraduate Degrees</a>\n        <ul>\n            <li>\n                <a href=\"#\">Animal Sciences Major</a>\n                <ul>\n                    <li><a href=\"#\" aria-current=\"page\">Pre-Veterinary and Medical</a></li>\n                    <li><a href=\"#\">Companion Animal Equine</a></li>\n                </ul>\n            </li>\n        </ul>\n    </li>\n    <li>\n        <a href=\"#\">Computer & Animal Science</a>\n        <ul>\n            <li><a href=\"#\">Some Third Thing</a></li>\n        </ul>\n    </li>\n</ul>"
         }
     ],
     "attributes-fixed": [
@@ -40,16 +40,6 @@
         }
     ],
     "attributes": [
-        {
-            "name": "collapse",
-            "description": "Force to always collapse (true) or never collapse (false)",
-            "depreciated": false,
-            "values": [
-                "",
-                "true",
-                "false"
-            ]
-        },
         {
             "name": "open",
             "description": "Set the menu to be open by default when collapsed",

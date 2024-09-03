@@ -1,17 +1,17 @@
 # ilw-section-nav
 
-Links: **[ilw-section-nav in Builder](https://builder3.toolkit.illinois.edu/component/ilw-section-nav/index.html)** | 
-[Illinois Web Theme](https://webtheme.illinois.edu/) | 
+Links: **[ilw-section-nav in Builder](https://builder3.toolkit.illinois.edu/component/ilw-section-nav/index.html)** |
+[Illinois Web Theme](https://webtheme.illinois.edu/) |
 [Toolkit Development](https://github.com/web-illinois/toolkit-management)
 
 ## Overview
 
-The section navigation component provides extended navigation links for a section of a website, 
-organized in a tree-like stucture. Compared to the main navigation, it provides more levels of 
-navigation and more items at a glance, making it easier to browse the contents of a section of 
+The section navigation component provides extended navigation links for a section of a website,
+organized in a tree-like stucture. Compared to the main navigation, it provides more levels of
+navigation and more items at a glance, making it easier to browse the contents of a section of
 a website.
 
-The section navigation is meant to be placed in a sidebar next to the main page content. On 
+The section navigation is meant to be placed in a sidebar next to the main page content. On
 smaller screens, it collapsed to an expanding widget labeled "In This Section".
 
 The following attributes can be used:
@@ -46,7 +46,7 @@ nest levels with `ul`. See the `manual` example below.
 
 ### Breakpoint for collapsed view
 
-By default, the navigation collapses to a "mobile" view when the width of the viewport is 
+By default, the navigation collapses to a "mobile" view when the width of the viewport is
 less than or equal to `700px`.
 
 CSS does not allow controlling breakpoints with variables. If you need to adjust the size,
@@ -89,24 +89,26 @@ In manual mode, a single `ilw-section-nav` is used, and the menu structure is ma
 manually.
 
 ```html
-
 <ilw-section-nav mode="manual">
     <ul>
-        <li><a href="/about" class="ilw-section-nav--root">About</a></li>
-        <li><a href="/about/dean">From the Dean</a></li>
-        <li><a href="/about/international-programs">International Programs</a></li>
-        <li>
-            <a href="/about/diversity-equity-inclusion" aria-current="page">Inclusion</a>
+        <li><a href="#" class="ilw-section-nav--root">Programs of Study</a></li>
+        <li><a href="#">Undergraduate Degrees</a>
             <ul>
                 <li>
-                    <a href="/about/inclusion/dei-goals">DEI Goals</a>
-                </li>
-                <li>
-                    <a href="/about/inclusion/student-supports">Student Supports</a>
+                    <a href="#">Animal Sciences Major</a>
+                    <ul>
+                        <li><a href="#" aria-current="page">Pre-Veterinary and Medical</a></li>
+                        <li><a href="#">Companion Animal Equine</a></li>
+                    </ul>
                 </li>
             </ul>
         </li>
-        <li><a href="/liac">Special Events</a></li>
+        <li>
+            <a href="#">Computer & Animal Science</a>
+            <ul>
+                <li><a href="#">Some Third Thing</a></li>
+            </ul>
+        </li>
     </ul>
 </ilw-section-nav>
 ```
