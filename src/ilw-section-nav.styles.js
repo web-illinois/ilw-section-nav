@@ -1,6 +1,6 @@
 import { css, html } from "lit";
 
-export const chevron = html`<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.4 23.82">
+export const chevron = html`<svg aria-hidden="true" class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.4 23.82">
       <path fill="currentColor" d="m39.34,1.06c-1.41-1.41-3.7-1.41-5.12,0l-14.02,14.02L6.18,1.06C4.76-.35,2.47-.35,1.06,1.06s-1.41,3.7,0,5.12l16.58,16.58c1.41,1.41,3.7,1.41,5.12,0L39.34,6.18c1.41-1.41,1.41-3.7,0-5.12Z"></path>
     </svg>`
 

@@ -2,7 +2,6 @@ import { LitElement, html } from "lit";
 import styles, { chevron } from "./ilw-section-nav.styles";
 import "./ilw-section-nav.css";
 import { ManualSlotController } from "./ManualSlotController.js";
-import { map } from "lit/directives/map.js";
 import { classMap } from "lit/directives/class-map.js";
 
 class SectionNav extends LitElement {
@@ -14,7 +13,7 @@ class SectionNav extends LitElement {
     static get properties() {
         return {
             mode: {},
-            collapse: { },
+            collapse: {},
             open: { reflect: true },
             label: {},
             isRoot: { type: Boolean, attribute: "is-root", reflect: true },
@@ -69,33 +68,35 @@ class SectionNav extends LitElement {
     }
 
     _renderAutomatic() {
-
         let inner = [];
 
         for (let i = 0; i < this.children.length; i++) {
             const classes = {
                 "section-nav-item": true,
-                "section-nav-item--root": i === 0 && this.isRoot
-            }
+                "section-nav-item--root": i === 0 && this.isRoot,
+            };
 
             // Because the link and sub-nav need to be inside the same li element,
             // we'll create two slots if needed for that.
-            const double = this.children.item(i + 1) && this.children.item(i + 1).tagName === "ILW-SECTION-NAV";
+            const double =
+                this.children.item(i + 1) &&
+                this.children.item(i + 1).tagName === "ILW-SECTION-NAV";
             let slot;
             if (double) {
                 slot = html`<slot></slot><slot></slot>`;
                 ++i;
             } else {
-                slot = html`<slot></slot>`
+                slot = html`<slot></slot>`;
             }
 
-            inner.push(html`<li class=${classMap(classes)}>
-                        ${slot}
-                    </li>`);
+            inner.push(html`<li class=${classMap(classes)}>${slot}</li>`);
         }
 
         const ul = html`
-            <ul class="section-nav-list section-nav-list--level-${this._level}">
+            <ul
+                class="section-nav-list section-nav-list--level-${this._level}"
+                id="section-nav--level-${this._level}"
+            >
                 ${inner}
             </ul>
         `;
@@ -110,9 +111,14 @@ class SectionNav extends LitElement {
             };
             return html` <div class=${classMap(classes)}>
                 <nav aria-labelledby="section-nav-toggle">
-                    <button id="section-nav-toggle" type="button" @click="${this.toggle}">
-                        ${this.label}
-                        ${chevron}
+                    <button
+                        id="section-nav-toggle"
+                        type="button"
+                        @click="${this.toggle}"
+                        aria-expanded=${this.open}
+                        aria-controls="section-nav--level-${this._level}"
+                    >
+                        ${this.label} ${chevron}
                     </button>
                     ${ul}
                 </nav>
@@ -132,14 +138,21 @@ class SectionNav extends LitElement {
             open: this.open === "true",
         };
         return html` <div class=${classMap(classes)}>
-                <nav aria-labelledby="section-nav-toggle">
-                    <button id="section-nav-toggle" type="button" @click="${this.toggle}">
-                        ${this.label}
-                        ${chevron}
-                    </button>
+            <nav aria-labelledby="section-nav-toggle">
+                <button
+                    id="section-nav-toggle"
+                    type="button"
+                    @click="${this.toggle}"
+                    aria-expanded=${this.open}
+                    aria-controls="section-nav--level-${this._level}"
+                >
+                    ${this.label} ${chevron}
+                </button>
+                <div id="section-nav--level-${this._level}">
                     <slot></slot>
-                </nav>
-            </div>`;
+                </div>
+            </nav>
+        </div>`;
     }
 }
 
