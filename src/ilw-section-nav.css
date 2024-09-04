@@ -35,7 +35,7 @@
         --ilw-section-nav--toggle--background--active: var(--il-arches-lighter-3); /*var: Active background for the toggle*/
 
         --ilw-section-nav--current--symbol: "▸ "; /*var: Symbol shown in front of the current page in the nav*/
-        --ilw-section-nav--current--width: 0.6875rem; /*var: Width of the current page symbol*/
+        --ilw-section-nav--current--size: 0.35rem; /*var: Size of the current page symbol*/
         --ilw-section-nav--current--left: -0.6875rem; /*var: Left margin for the current page symbol*/
     }
 }
@@ -52,14 +52,21 @@ ilw-section-nav {
         padding-bottom: var(--ilw-section-nav--item--padding-bottom);
         padding-left: var(--ilw-section-nav--item--padding-left);
         align-content: center;
+        position: relative;
 
         &[aria-current="page"] {
             color: var(--ilw-section-nav--color--active);
 
             &:before {
-                content: var(--ilw-section-nav--current--symbol);
-                display: inline-block;
-                width: var(--ilw-section-nav--current--width);
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                position: absolute;
+                border-top: var(--ilw-section-nav--current--size) solid transparent;
+                border-bottom: var(--ilw-section-nav--current--size) solid transparent;
+                border-left: var(--ilw-section-nav--current--size) solid currentColor;
+                top: calc(var(--ilw-section-nav--item--height)/2 - var(--ilw-section-nav--current--size) - 1px);
                 margin-left: var(--ilw-section-nav--current--left);
             }
         }
