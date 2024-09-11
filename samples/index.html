@@ -30,12 +30,13 @@
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-breadcrumbs/1.0.0-alpha/ilw-breadcrumbs.css">
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-page/1.0.0-alpha2/ilw-page.css">
-    <script type="module" src="/src/ilw-section-nav.js"></script>
+    <script type="module" blocking="render"  src="/src/ilw-section-nav.js"></script>
 
     <style>
         body {
             font-family: var(--il-font-sans);
         }
+
     </style>
     <title>Section Nav Component</title>
 </head>
@@ -64,13 +65,13 @@
     <ilw-columns mode="1x3" gap="40px">
         <aside>
             <ilw-section-nav>
-                <a href="#" class="ilw-section-nav--root">Programs of Study</a>
-                <a href="#">Undergraduate Degrees</a>
+                <a href="/samples/index.html" class="ilw-section-nav--root" aria-current="page">Programs of Study</a>
+                <a href="/samples/index.html">Undergraduate Degrees</a>
                 <ilw-section-nav>
                     <a href="#">Animal Sciences Major</a>
                     <ilw-section-nav>
                         <a href="#">Pre-Veterinary and Medical</a>
-                        <a href="#" aria-current="page">Food Animal</a>
+                        <a href="#">Food Animal</a>
                         <ilw-section-nav>
                             <a href="#">Deeper</a>
                             <ilw-section-nav>
@@ -97,6 +98,13 @@
                                 <ul>
                                     <li><a href="#" aria-current="page">Pre-Veterinary and Medical</a></li>
                                     <li><a href="#">Companion Animal Equine</a></li>
+                                    <li>
+                                        <a href="#">Animal Sciences Major</a>
+                                        <ul>
+                                            <li><a href="#" aria-current="page">Pre-Veterinary and Medical</a></li>
+                                            <li><a href="#">Companion Animal Equine</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

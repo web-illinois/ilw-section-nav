@@ -1,48 +1,8 @@
-@layer base {
-    :root {
-        --ilw-section-nav--margin-top: 1.5em; /*var: Margin above when not collapsed*/
-        --ilw-section-nav--collapsed--margin-bottom: 1.5em; /*var: Margin below when collapsed*/
-        --ilw-section-nav--collapsed--border: 2px solid var(--il-blue); /*var: Bottom border when collapsed*/
-
-        --ilw-section-nav--line-height: 1.2rem; /*var: Line height for links*/
-        --ilw-section-nav--color: var(--il-blue); /*var: Normal link text color*/
-        --ilw-section-nav--color--focus: var(--il-blue); /*var: Focused link text color*/
-        --ilw-section-nav--color--hover: var(--il-altgeld); /*var: Hover link text color*/
-        --ilw-section-nav--color--active: var(--il-altgeld); /*var: Active link text color*/
-        --ilw-section-nav--level-padding: 0.9375rem; /*var: Left indentation for levels*/
-        --ilw-section-nav--level2-padding: 1.5625rem; /*var: Specific indentation for level 2 children*/
-        --ilw-section-nav--level0-font-size: 1.125rem; /*var: First level children font size*/
-        --ilw-section-nav--level1-font-size: 1rem; /*var: Font size for all deeper children*/
-        --ilw-section-nav--font-weight: 600; /*var: Font weight for menu items*/
-
-        --ilw-section-nav--item--height: 2.75rem; /*var: Height of a nav element*/
-        --ilw-section-nav--item--padding-top: 0.7rem; /*var: Top padding for a nav item*/
-        --ilw-section-nav--item--padding-right: 0.625rem; /*var: Right padding for a nav item*/
-        --ilw-section-nav--item--padding-bottom: 0.7rem; /*var: Bottom padding for a nav item*/
-        --ilw-section-nav--item--padding-left: 1.25rem; /*var: Left padding for a nav item*/
-
-        --ilw-section-nav--level1-border: 1px solid var(--il-storm-lighter-3); /*var: Top border for first level items*/
-
-        --ilw-section-nav--root--font-size: 1.25rem; /*var: Font size for the root link*/
-        --ilw-section-nav--root--background: var(--il-storm-lighter-4); /*var: Background for the root link*/
-        --ilw-section-nav--root--font-weight: 700; /*var: Font weight for the root link*/
-
-        --ilw-section-nav--toggle--font-size: 1rem; /*var: Font size for the toggle when collapsed*/
-        --ilw-section-nav--toggle--background: #E8E9EB; /*var: Background for the toggle*/
-        --ilw-section-nav--toggle--font: var(--il-font-sans); /*var: Font family for the toggle*/
-        --ilw-section-nav--toggle--font-weight: 400; /*var: Font weight for the toggle*/
-        --ilw-section-nav--toggle--border: 1px solid var(--il-storm-lighter-3); /*var: Bottom border for the toggle*/
-        --ilw-section-nav--toggle--background--active: var(--il-arches-lighter-3); /*var: Active background for the toggle*/
-
-        --ilw-section-nav--current--symbol: "▸ "; /*var: Symbol shown in front of the current page in the nav*/
-        --ilw-section-nav--current--size: 0.35rem; /*var: Size of the current page symbol*/
-        --ilw-section-nav--current--left: -0.6875rem; /*var: Left margin for the current page symbol*/
-    }
+ilw-section-nav:not(:defined) * {
+    visibility: hidden;
 }
 
-ilw-section-nav {
-    container-type: inline-size;
-
+ilw-section-nav[mode="manual"] {
     a {
         color: var(--ilw-section-nav--color);
         text-decoration: var(--ilw-link--focused-background-color);
@@ -50,9 +10,15 @@ ilw-section-nav {
         padding-top: var(--ilw-section-nav--item--padding-top);
         padding-right: var(--ilw-section-nav--item--padding-right);
         padding-bottom: var(--ilw-section-nav--item--padding-bottom);
-        padding-left: var(--ilw-section-nav--item--padding-left);
+
         align-content: center;
         position: relative;
+
+        &.ilw-section-nav--root {
+            font-size: var(--ilw-section-nav--root--font-size);
+            background: var(--ilw-section-nav--root--background);
+            font-weight: var(--ilw-section-nav--root--font-weight);
+        }
 
         &[aria-current="page"] {
             color: var(--ilw-section-nav--color--active);
@@ -66,7 +32,7 @@ ilw-section-nav {
                 border-top: var(--ilw-section-nav--current--size) solid transparent;
                 border-bottom: var(--ilw-section-nav--current--size) solid transparent;
                 border-left: var(--ilw-section-nav--current--size) solid currentColor;
-                top: calc(var(--ilw-section-nav--item--height)/2 - var(--ilw-section-nav--current--size) - 1px);
+                top: calc(var(--ilw-section-nav--item--height) / 2 - var(--ilw-section-nav--current--size) - 1px);
                 margin-left: var(--ilw-section-nav--current--left);
             }
         }
@@ -80,95 +46,6 @@ ilw-section-nav {
             color: var(--ilw-section-nav--color--focus);
         }
     }
-
-    /*
-    This is the best way I could come up with to keep increasing the indent while:
-     - not modifying the host page's DOM
-     - ensuring the `a` tag extends full width for styling
-     - allowing for extra div elements in the DOM from CMSes
-     */
-
-    ilw-section-nav {
-        a {
-            padding-left: calc(var(--ilw-section-nav--item--padding-left) + var(--ilw-section-nav--level-padding));
-        }
-
-        ilw-section-nav {
-            a {
-                padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                + var(--ilw-section-nav--level-padding)
-                + var(--ilw-section-nav--level2-padding));
-            }
-
-            ilw-section-nav {
-                a {
-                    padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                    + var(--ilw-section-nav--level-padding) * 2
-                    + var(--ilw-section-nav--level2-padding));
-                }
-
-                ilw-section-nav {
-                    a {
-                        padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                        + var(--ilw-section-nav--level-padding) * 3
-                        + var(--ilw-section-nav--level2-padding));
-                    }
-
-                    ilw-section-nav {
-                        a {
-                            padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                            + var(--ilw-section-nav--level-padding) * 4
-                            + var(--ilw-section-nav--level2-padding));
-                        }
-
-                        ilw-section-nav {
-                            a {
-                                padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                + var(--ilw-section-nav--level-padding) * 5
-                                + var(--ilw-section-nav--level2-padding));
-                            }
-
-                            ilw-section-nav {
-                                a {
-                                    padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                    + var(--ilw-section-nav--level-padding) * 6
-                                    + var(--ilw-section-nav--level2-padding));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /*
-    To allow arbitrary child elements from CMSes, this selector applies
-    to all children of the top-most nav that are not another ilw-section nav
-    and don't have an ilw-section-nav descendant.
-     */
-
-    &[is-root] > *:not(:has(ilw-section-nav)):not(ilw-section-nav) {
-        border-top: var(--ilw-section-nav--level1-border);
-    }
-
-    &[is-root] {
-        a.ilw-section-nav--root {
-            font-size: var(--ilw-section-nav--root--font-size);
-            background: var(--ilw-section-nav--root--background);
-            font-weight: var(--ilw-section-nav--root--font-weight);
-            border-top: none;
-        }
-
-        /* This removes the border if the root `a` tag isn't a direct child */
-
-        & > *:has(a.ilw-section-nav--root) {
-            border-top: none;
-        }
-    }
-}
-
-ilw-section-nav[mode="manual"] {
     ul {
         list-style: none;
         padding: 0;
@@ -186,10 +63,10 @@ ilw-section-nav[mode="manual"] {
     }
 
     & > ul {
-        & > li {
+        & > li > a {
             border-top: var(--ilw-section-nav--level1-border);
 
-            &:has(a.ilw-section-nav--root) {
+            &.ilw-section-nav--root {
                 border-top: none;
             }
         }
@@ -220,37 +97,30 @@ ilw-section-nav[mode="manual"] {
 
             ul {
                 a {
+                    --ilw-section-nav--padding-multiplier: 1;
                     padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                    + var(--ilw-section-nav--level-padding)
+                    + var(--ilw-section-nav--level-padding) * var(--ilw-section-nav--padding-multiplier)
                     + var(--ilw-section-nav--level2-padding));
                 }
 
                 ul {
                     a {
-                        padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                        + var(--ilw-section-nav--level-padding) * 2
-                        + var(--ilw-section-nav--level2-padding));
+                        --ilw-section-nav--padding-multiplier: 2;
                     }
 
                     ul {
                         a {
-                            padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                            + var(--ilw-section-nav--level-padding) * 3
-                            + var(--ilw-section-nav--level2-padding));
+                            --ilw-section-nav--padding-multiplier: 3;
                         }
 
                         ul {
                             a {
-                                padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                + var(--ilw-section-nav--level-padding) * 4
-                                + var(--ilw-section-nav--level2-padding));
+                                --ilw-section-nav--padding-multiplier: 4;
                             }
 
                             ul {
                                 a {
-                                    padding-left: calc(var(--ilw-section-nav--item--padding-left)
-                                    + var(--ilw-section-nav--level-padding) * 5
-                                    + var(--ilw-section-nav--level2-padding));
+                                    --ilw-section-nav--padding-multiplier: 5;
                                 }
                             }
                         }
@@ -261,16 +131,6 @@ ilw-section-nav[mode="manual"] {
     }
 
     @media screen and (max-width: 700px) {
-        .auto-collapse.section-nav-top {
-            margin-top: 0;
-            margin-bottom: var(--ilw-section-nav--collapsed--margin-bottom);
-            border-bottom: var(--ilw-section-nav--collapsed--border);
-        }
-
-        .auto-collapse #section-nav-toggle {
-            display: block;
-        }
-
         & > ul {
             display: none;
         }
