@@ -1,8 +1,8 @@
 name: publish_npm
 on:
   workflow_dispatch:
-  push:
-    tags: [ '**' ]
+  release:
+    types: [published]
 jobs:
   build:
     runs-on: ubuntu-latest
