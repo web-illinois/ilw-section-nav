@@ -80,7 +80,9 @@
     }
 
     ::slotted(a:focus) {
-        color: var(--ilw-section-nav--color--focus);
+        color: var(--ilw-link--focus-color);
+        background-color: var(--ilw-link--focus-background-color);
+        outline: var(--ilw-link--focus-outline);
     }
 }
 
@@ -119,6 +121,11 @@
         background: var(--ilw-section-nav--root--background);
         font-weight: var(--ilw-section-nav--root--font-weight);
         border-top: none;
+    }
+    ::slotted(a.ilw-section-nav--root:focus) {
+        color: var(--ilw-link--focus-color);
+        background-color: var(--ilw-link--focus-background-color);
+        outline: var(--ilw-link--focus-outline);
     }
 }
 
@@ -181,6 +188,13 @@
 
 #section-nav-toggle:active {
     background: var(--ilw-section-nav--toggle--background--active);
+}
+
+#section-nav-toggle:focus {
+    color: var(--ilw-link--focus-color);
+    background-color: var(--ilw-link--focus-background-color);
+    outline: var(--ilw-link--focus-outline);
+    outline-offset: -1px; /* Since this element has no spacing around it, make sure the outline is visible */
 }
 
 #section-nav-toggle .chevron {

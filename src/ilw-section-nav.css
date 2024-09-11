@@ -43,7 +43,9 @@ ilw-section-nav[mode="manual"] {
         }
 
         &:focus {
-            color: var(--ilw-section-nav--color--focus);
+            color: var(--ilw-link--focus-color);
+            background-color: var(--ilw-link--focus-background-color);
+            outline: var(--ilw-link--focus-outline);
         }
     }
     ul {
