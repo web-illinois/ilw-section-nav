@@ -45,6 +45,10 @@
     display: block;
     container-type: inline-size;
 
+    /* Some of the slotted styles are replicated both here and in ilw-section-nav.css. This is because
+       it's needed here to prevent flash of unstyled content, and in ilw-section-nav.css to prevent issues
+       with ::slotted always being less specific than global CSS.
+     */
     ::slotted(a) {
         color: var(--ilw-section-nav--color);
         text-decoration: var(--ilw-link--focused-background-color);
@@ -59,19 +63,6 @@
 
     ::slotted(a[aria-current="page"]) {
         color: var(--ilw-section-nav--color--active);
-
-        &:before {
-            content: "";
-            display: block;
-            width: 0;
-            height: 0;
-            position: absolute;
-            border-top: var(--ilw-section-nav--current--size) solid transparent;
-            border-bottom: var(--ilw-section-nav--current--size) solid transparent;
-            border-left: var(--ilw-section-nav--current--size) solid currentColor;
-            top: calc(var(--ilw-section-nav--item--height) / 2 - var(--ilw-section-nav--current--size) - 1px);
-            margin-left: var(--ilw-section-nav--current--left);
-        }
     }
 
     ::slotted(a:hover) {

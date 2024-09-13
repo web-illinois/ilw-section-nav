@@ -1,6 +1,6 @@
 import {readFileSync} from "fs";
 
-const contents = readFileSync("src/ilw-section-nav.css", "utf-8");
+const contents = readFileSync("src/ilw-section-nav.styles.css", "utf-8");
 const regex = /^\s*(--[\w-]+):\s*([^;]+);\s*\/\*\s*(var|vardep):\s*(.+)\*\s*\/$/gm;
 
 let output = [];
