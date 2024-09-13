@@ -1,14 +1,15 @@
 {
     "title": "Section Nav",
-    "tag": "ilw-section-nav-manual",
+    "tag": "ilw-section-nav",
     "github": "https://github.com/web-illinois/ilw-section-nav/",
     "type": "web component",
     "element-name": "ilw-section-nav",
     "description": "Secondary navigation for a section of a website.",
-    "version": "1.0.0-alpha3",
-    "date": "09/03/2024",
-    "css": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-alpha3/ilw-section-nav.css",
-    "js": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-alpha3/ilw-section-nav.js",
+    "builder-version": "1.0-beta",
+    "version": "1.0.0-beta",
+    "date": "09/13/2024",
+    "css": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-beta/ilw-section-nav.css",
+    "js": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-beta/ilw-section-nav.js",
     "production": false,
     "notes": "",
     "parent-style": "margin: 0 auto; max-width: 400px;",
@@ -16,17 +17,10 @@
         {
             "name": "default",
             "description": "Default information",
-            "text": "<ul>\n    <li><a href=\"#\" class=\"ilw-section-nav--root\">Programs of Study</a></li>\n    <li><a href=\"#\">Undergraduate Degrees</a>\n        <ul>\n            <li>\n                <a href=\"#\">Animal Sciences Major</a>\n                <ul>\n                    <li><a href=\"#\" aria-current=\"page\">Pre-Veterinary and Medical</a></li>\n                    <li><a href=\"#\">Companion Animal Equine</a></li>\n                </ul>\n            </li>\n        </ul>\n    </li>\n    <li>\n        <a href=\"#\">Computer & Animal Science</a>\n        <ul>\n            <li><a href=\"#\">Some Third Thing</a></li>\n        </ul>\n    </li>\n</ul>"
+            "text": "<a href=\"#\" class=\"ilw-section-nav--root\">Programs of Study</a>\n<a href=\"#\">Undergraduate Degrees</a>\n<ilw-section-nav>\n    <a href=\"#\">Animal Sciences Major</a>\n    <ilw-section-nav>\n        <a href=\"#\" aria-current=\"page\">Pre-Veterinary and Medical</a>\n        <a href=\"#\">Companion Animal Equine</a>\n    </ilw-section-nav>\n</ilw-section-nav>\n<a href=\"#\">Computer & Animal Science</a>\n<ilw-section-nav>\n    <a href=\"#\">Some Third Thing</a>\n</ilw-section-nav>"
         }
     ],
-    "attributes-fixed": [
-        {
-            "name": "mode",
-            "description": "Mode of the component",
-            "depreciated": false,
-            "value": "manual"
-        }
-    ],
+    "attributes-fixed": [],
     "attributes-text": [
         {
             "name": "label",
@@ -40,6 +34,16 @@
         }
     ],
     "attributes": [
+        {
+            "name": "collapse",
+            "description": "Force to always collapse (true) or never collapse (false)",
+            "depreciated": false,
+            "values": [
+                "",
+                "true",
+                "false"
+            ]
+        },
         {
             "name": "open",
             "description": "Set the menu to be open by default when collapsed",
