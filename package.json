@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-section-nav",
     "private": false,
     "license": "MIT",
-    "version": "1.0.0-alpha2",
+    "version": "1.0.0-alpha3",
     "type": "module",
     "files": [
         "src/**",
