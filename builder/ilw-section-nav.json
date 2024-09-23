@@ -5,6 +5,7 @@
     "type": "web component",
     "element-name": "ilw-section-nav",
     "description": "Secondary navigation for a section of a website.",
+    "purpose": "Add secondary navigation for a set of pages.",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0-beta"

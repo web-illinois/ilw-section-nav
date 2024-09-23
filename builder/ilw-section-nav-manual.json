@@ -5,6 +5,7 @@
     "type": "web component",
     "element-name": "ilw-section-nav",
     "description": "Secondary navigation for a section of a website, without automatic list elements.",
+    "purpose": "Create a secondary navigation without automatic list elements.",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0-beta"
