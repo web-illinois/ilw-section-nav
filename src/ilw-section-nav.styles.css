@@ -3,6 +3,7 @@
         --ilw-section-nav--margin-top: 1.5em; /*var: Margin above when not collapsed*/
         --ilw-section-nav--collapsed--margin-bottom: 1.5em; /*var: Margin below when collapsed*/
         --ilw-section-nav--collapsed--border: 2px solid var(--il-blue); /*var: Bottom border when collapsed*/
+        --ilw-section-nav--font: var(--il-font-sans); /*var Set the font used for the nav*/
 
         --ilw-section-nav--line-height: 1.2rem; /*var: Line height for links*/
         --ilw-section-nav--color: var(--il-blue); /*var: Normal link text color*/
@@ -44,6 +45,7 @@
 
     display: block;
     container-type: inline-size;
+    font-family: var(--ilw-section-nav--font);
 
     /* Some of the slotted styles are replicated both here and in ilw-section-nav.css. This is because
        it's needed here to prevent flash of unstyled content, and in ilw-section-nav.css to prevent issues
