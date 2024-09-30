@@ -44,6 +44,9 @@ ilw-section-nav {
             color: var(--ilw-link--focus-color);
             background-color: var(--ilw-link--focus-background-color);
             outline: var(--ilw-link--focus-outline);
+
+            /* Keep inside the nav item so it doesn't get cut off */
+            outline-offset: -1px;
         }
     }
 
