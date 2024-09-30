@@ -34,16 +34,19 @@ ilw-section-nav {
             color: var(--ilw-section-nav--color--hover);
         }
 
-        &:focus {
-            color: var(--ilw-link--focus-color);
-            background-color: var(--ilw-link--focus-background-color);
-            outline: var(--ilw-link--focus-outline);
-        }
-
         &.ilw-section-nav--root {
             font-size: var(--ilw-section-nav--root--font-size);
             background: var(--ilw-section-nav--root--background);
             font-weight: var(--ilw-section-nav--root--font-weight);
+        }
+
+        &:focus {
+            color: var(--ilw-link--focus-color);
+            background-color: var(--ilw-link--focus-background-color);
+            outline: var(--ilw-link--focus-outline);
+
+            /* Keep inside the nav item so it doesn't get cut off */
+            outline-offset: -1px;
         }
     }
 

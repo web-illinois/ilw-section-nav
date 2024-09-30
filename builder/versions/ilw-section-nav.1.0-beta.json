@@ -6,7 +6,7 @@
     "element-name": "ilw-section-nav",
     "description": "Secondary navigation for a section of a website.",
     "builder-version": "1.0-beta",
-    "version": "1.0.0-beta",
+    "version": "1.0.0-beta1",
     "date": "09/13/2024",
     "css": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-beta/ilw-section-nav.css",
     "js": "https://dev.toolkit.illinois.edu/ilw-section-nav/1.0.0-beta/ilw-section-nav.js",
