@@ -1,0 +1,217 @@
+{
+    "title": "Section Nav",
+    "tag": "ilw-section-nav",
+    "github": "https://github.com/web-illinois/ilw-section-nav/",
+    "type": "web component",
+    "element-name": "ilw-section-nav",
+    "description": "Secondary navigation for a section of a website.",
+    "builder-version": "1.0",
+    "version": "1.0.0",
+    "date": "10/22/2024",
+    "css": "https://cdn.toolkit.illinois.edu/ilw-section-nav/1.0.0/ilw-section-nav.css",
+    "js": "https://cdn.toolkit.illinois.edu/ilw-section-nav/1.0.0/ilw-section-nav.js",
+    "production": true,
+    "notes": "",
+    "parent-style": "margin: 0 auto; max-width: 400px;",
+    "samples": [
+        {
+            "name": "default",
+            "description": "Default information",
+            "text": "<a href=\"#\" class=\"ilw-section-nav--root\">Programs of Study</a>\n<a href=\"#\">Undergraduate Degrees</a>\n<ilw-section-nav>\n    <a href=\"#\">Animal Sciences Major</a>\n    <ilw-section-nav>\n        <a href=\"#\" aria-current=\"page\">Pre-Veterinary and Medical</a>\n        <a href=\"#\">Companion Animal Equine</a>\n    </ilw-section-nav>\n</ilw-section-nav>\n<a href=\"#\">Computer & Animal Science</a>\n<ilw-section-nav>\n    <a href=\"#\">Some Third Thing</a>\n</ilw-section-nav>"
+        }
+    ],
+    "attributes-fixed": [],
+    "attributes-text": [
+        {
+            "name": "label",
+            "description": "Accessible label for the menu, and also the text of the toggle when collapsed",
+            "depreciated": false,
+            "values": [
+                "",
+                "true",
+                "false"
+            ]
+        }
+    ],
+    "attributes": [
+        {
+            "name": "collapse",
+            "description": "Force to always collapse (true) or never collapse (false)",
+            "depreciated": false,
+            "values": [
+                "",
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "open",
+            "description": "Set the menu to be open by default when collapsed",
+            "depreciated": false,
+            "values": [
+                "",
+                "true",
+                "false"
+            ]
+        }
+    ],
+    "classes-fixed": [],
+    "classes": [],
+    "css-variables": [
+        {
+            "name": "--ilw-section-nav--margin-top",
+            "depreciated": false,
+            "description": "Margin above when not collapsed [default: 1.5em]"
+        },
+        {
+            "name": "--ilw-section-nav--collapsed--margin-bottom",
+            "depreciated": false,
+            "description": "Margin below when collapsed [default: 1.5em]"
+        },
+        {
+            "name": "--ilw-section-nav--collapsed--border",
+            "depreciated": false,
+            "description": "Bottom border when collapsed [default: 2px solid var(--il-blue)]"
+        },
+        {
+            "name": "--ilw-section-nav--line-height",
+            "depreciated": false,
+            "description": "Line height for links [default: 1.2rem]"
+        },
+        {
+            "name": "--ilw-section-nav--color",
+            "depreciated": false,
+            "description": "Normal link text color [default: var(--il-blue)]"
+        },
+        {
+            "name": "--ilw-section-nav--color--focus",
+            "depreciated": false,
+            "description": "Focused link text color [default: var(--il-blue)]"
+        },
+        {
+            "name": "--ilw-section-nav--color--hover",
+            "depreciated": false,
+            "description": "Hover link text color [default: var(--il-altgeld)]"
+        },
+        {
+            "name": "--ilw-section-nav--color--active",
+            "depreciated": false,
+            "description": "Active link text color [default: var(--il-altgeld)]"
+        },
+        {
+            "name": "--ilw-section-nav--level-padding",
+            "depreciated": false,
+            "description": "Left indentation for levels [default: 0.9375rem]"
+        },
+        {
+            "name": "--ilw-section-nav--level2-padding",
+            "depreciated": false,
+            "description": "Specific indentation for level 2 children [default: 1.5625rem]"
+        },
+        {
+            "name": "--ilw-section-nav--level0-font-size",
+            "depreciated": false,
+            "description": "First level children font size [default: 1.125rem]"
+        },
+        {
+            "name": "--ilw-section-nav--level1-font-size",
+            "depreciated": false,
+            "description": "Font size for all deeper children [default: 1rem]"
+        },
+        {
+            "name": "--ilw-section-nav--font-weight",
+            "depreciated": false,
+            "description": "Font weight for menu items [default: 600]"
+        },
+        {
+            "name": "--ilw-section-nav--item--height",
+            "depreciated": false,
+            "description": "Height of a nav element [default: 2.75rem]"
+        },
+        {
+            "name": "--ilw-section-nav--item--padding-top",
+            "depreciated": false,
+            "description": "Top padding for a nav item [default: 0.7rem]"
+        },
+        {
+            "name": "--ilw-section-nav--item--padding-right",
+            "depreciated": false,
+            "description": "Right padding for a nav item [default: 0.625rem]"
+        },
+        {
+            "name": "--ilw-section-nav--item--padding-bottom",
+            "depreciated": false,
+            "description": "Bottom padding for a nav item [default: 0.7rem]"
+        },
+        {
+            "name": "--ilw-section-nav--item--padding-left",
+            "depreciated": false,
+            "description": "Left padding for a nav item [default: 1.25rem]"
+        },
+        {
+            "name": "--ilw-section-nav--level1-border",
+            "depreciated": false,
+            "description": "Top border for first level items [default: 1px solid var(--il-storm-lighter-3)]"
+        },
+        {
+            "name": "--ilw-section-nav--root--font-size",
+            "depreciated": false,
+            "description": "Font size for the root link [default: 1.25rem]"
+        },
+        {
+            "name": "--ilw-section-nav--root--background",
+            "depreciated": false,
+            "description": "Background for the root link [default: var(--il-storm-lighter-4)]"
+        },
+        {
+            "name": "--ilw-section-nav--root--font-weight",
+            "depreciated": false,
+            "description": "Font weight for the root link [default: 700]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--font-size",
+            "depreciated": false,
+            "description": "Font size for the toggle when collapsed [default: 1rem]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--background",
+            "depreciated": false,
+            "description": "Background for the toggle [default: #E8E9EB]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--font",
+            "depreciated": false,
+            "description": "Font family for the toggle [default: var(--il-font-sans)]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--font-weight",
+            "depreciated": false,
+            "description": "Font weight for the toggle [default: 400]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--border",
+            "depreciated": false,
+            "description": "Bottom border for the toggle [default: 1px solid var(--il-storm-lighter-3)]"
+        },
+        {
+            "name": "--ilw-section-nav--toggle--background--active",
+            "depreciated": false,
+            "description": "Active background for the toggle [default: var(--il-arches-lighter-3)]"
+        },
+        {
+            "name": "--ilw-section-nav--current--symbol",
+            "depreciated": false,
+            "description": "Symbol shown in front of the current page in the nav [default: \"▸ \"]"
+        },
+        {
+            "name": "--ilw-section-nav--current--size",
+            "depreciated": false,
+            "description": "Size of the current page symbol [default: 0.35rem]"
+        },
+        {
+            "name": "--ilw-section-nav--current--left",
+            "depreciated": false,
+            "description": "Left margin for the current page symbol [default: -0.6875rem]"
+        }
+    ]
+}
