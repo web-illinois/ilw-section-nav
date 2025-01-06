@@ -50,6 +50,20 @@ ilw-section-nav {
         }
     }
 
+    span.ilw-section-nav--root {
+        font-size: var(--ilw-section-nav--root--font-size);
+        background: var(--ilw-section-nav--root--background);
+        font-weight: var(--ilw-section-nav--root--font-weight);
+        color: var(--ilw-section-nav--color);
+        display: block;
+        padding: var(--ilw-section-nav--item--padding-top)
+            var(--ilw-section-nav--item--padding-right)
+            var(--ilw-section-nav--item--padding-bottom)
+            var(--ilw-section-nav--item--padding-left);
+
+        align-content: center;
+    }
+
     /*
     This is the best way I could come up with to keep increasing the indent while:
      - not modifying the host page's DOM
@@ -116,6 +130,7 @@ ilw-section-nav {
 ilw-section-nav[mode="manual"] {
     a {
     }
+
     ul {
         list-style: none;
         padding: 0;
