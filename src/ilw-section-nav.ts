@@ -1,4 +1,4 @@
-import { html, LitElement, unsafeCSS } from "lit";
+import { html, LitElement, nothing, unsafeCSS } from "lit";
 // @ts-ignore
 import styles from "./ilw-section-nav.styles.css?inline";
 import "./ilw-section-nav.css";
@@ -85,6 +85,8 @@ export default class SectionNav extends LitElement {
 
     _renderAutomatic() {
         let inner = [];
+        let simulateHover = !!this.getAttribute("data-simulated-hover");
+        let simulateFocus = !!this.getAttribute("data-simulated-focus");
 
         for (let i = 0; i < this.children.length; i++) {
             const classes = {
@@ -112,6 +114,8 @@ export default class SectionNav extends LitElement {
             <ul
                 class="section-nav-list section-nav-list--level-${this._level}"
                 id="section-nav--level-${this._level}"
+                data-simulate-hover=${simulateHover ? "true" : nothing}
+                data-simulate-focus=${simulateFocus ? "true" : nothing}
             >
                 ${inner}
             </ul>
@@ -144,6 +148,8 @@ export default class SectionNav extends LitElement {
     }
 
     _renderManual() {
+        let simulateHover = !!this.getAttribute("data-simulated-hover");
+        let simulateFocus = !!this.getAttribute("data-simulated-focus");
         const classes = {
             "section-nav-top": true,
             "section-nav-manual": true,
@@ -154,7 +160,11 @@ export default class SectionNav extends LitElement {
             open: this.open === "true",
         };
         return html` <div class=${classMap(classes)}>
-            <nav aria-labelledby="section-nav-toggle">
+            <nav
+                aria-labelledby="section-nav-toggle"
+                data-simulate-hover=${simulateHover ? "true" : nothing}
+                data-simulate-focus=${simulateFocus ? "true" : nothing}
+            >
                 <button
                     id="section-nav-toggle"
                     type="button"

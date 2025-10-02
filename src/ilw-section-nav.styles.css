@@ -2,14 +2,10 @@
     :host {
         --ilw-section-nav--margin-top: 1.5em; /*var: Margin above when not collapsed*/
         --ilw-section-nav--collapsed--margin-bottom: 1.5em; /*var: Margin below when collapsed*/
-        --ilw-section-nav--collapsed--border: 2px solid var(--il-blue); /*var: Bottom border when collapsed*/
+        --ilw-section-nav--collapsed--border: 2px solid var(--ilw-color--control-text); /*var: Bottom border when collapsed*/
         --ilw-section-nav--font: var(--il-font-sans); /*var Set the font used for the nav*/
 
         --ilw-section-nav--line-height: 1.2rem; /*var: Line height for links*/
-        --ilw-section-nav--color: var(--il-blue); /*var: Normal link text color*/
-        --ilw-section-nav--color--focus: var(--il-blue); /*var: Focused link text color*/
-        --ilw-section-nav--color--hover: var(--il-altgeld); /*var: Hover link text color*/
-        --ilw-section-nav--color--active: var(--il-altgeld); /*var: Active link text color*/
         --ilw-section-nav--level-padding: 0.9375rem; /*var: Left indentation for levels*/
         --ilw-section-nav--level2-padding: 1.5625rem; /*var: Specific indentation for level 2 children*/
         --ilw-section-nav--level0-font-size: 1.125rem; /*var: First level children font size*/
@@ -22,18 +18,17 @@
         --ilw-section-nav--item--padding-bottom: 0.7rem; /*var: Bottom padding for a nav item*/
         --ilw-section-nav--item--padding-left: 1.25rem; /*var: Left padding for a nav item*/
 
-        --ilw-section-nav--level1-border: 1px solid var(--il-storm-lighter-3); /*var: Top border for first level items*/
+        --ilw-section-nav--level1-border: 1px solid var(--ilw-color--border-light); /*var: Top border for first level items*/
 
         --ilw-section-nav--root--font-size: 1.25rem; /*var: Font size for the root link*/
-        --ilw-section-nav--root--background: var(--il-storm-lighter-4); /*var: Background for the root link*/
+        --ilw-section-nav--root--background: var(--il-storm-95); /*var: Background for the root link*/
         --ilw-section-nav--root--font-weight: 700; /*var: Font weight for the root link*/
 
         --ilw-section-nav--toggle--font-size: 1rem; /*var: Font size for the toggle when collapsed*/
         --ilw-section-nav--toggle--background: #E8E9EB; /*var: Background for the toggle*/
         --ilw-section-nav--toggle--font: var(--il-font-sans); /*var: Font family for the toggle*/
         --ilw-section-nav--toggle--font-weight: 400; /*var: Font weight for the toggle*/
-        --ilw-section-nav--toggle--border: 1px solid var(--il-storm-lighter-3); /*var: Bottom border for the toggle*/
-        --ilw-section-nav--toggle--background--active: var(--il-arches-lighter-3); /*var: Active background for the toggle*/
+        --ilw-section-nav--toggle--border: 1px solid var(--ilw-color--border-light); /*var: Bottom border for the toggle*/
 
         --ilw-section-nav--current--symbol: "▸ "; /*var: Symbol shown in front of the current page in the nav*/
         --ilw-section-nav--current--size: 0.35rem; /*var: Size of the current page symbol*/
@@ -52,8 +47,7 @@
        with ::slotted always being less specific than global CSS.
      */
     ::slotted(a) {
-        color: var(--ilw-section-nav--color);
-        text-decoration: var(--ilw-link--focused-background-color);
+        color: var(--ilw-color--heading);
         display: block;
         padding-top: var(--ilw-section-nav--item--padding-top);
         padding-right: var(--ilw-section-nav--item--padding-right);
@@ -64,18 +58,18 @@
     }
 
     ::slotted(a[aria-current="page"]) {
-        color: var(--ilw-section-nav--color--active);
+        color: var(--ilw-color--link-hover);
     }
 
-    ::slotted(a:hover) {
+    ::slotted(a:is(:hover, [data-simulated-hover] *)) {
         text-decoration: underline;
-        color: var(--ilw-section-nav--color--hover);
+        color: var(--ilw-color--link-hover);
     }
 
-    ::slotted(a:focus) {
-        color: var(--ilw-link--focus-color);
-        background-color: var(--ilw-link--focus-background-color);
-        outline: var(--ilw-link--focus-outline);
+    ::slotted(a:is(:focus, [data-simulated-focus] *)) {
+        color: var(--ilw-color--focus--text);
+        background-color: var(--ilw-color--focus--background);
+        outline-color: var(--ilw-color--focus--outline);
     }
 }
 
@@ -116,9 +110,9 @@
         border-top: none;
     }
     ::slotted(a.ilw-section-nav--root:focus) {
-        color: var(--ilw-link--focus-color);
-        background-color: var(--ilw-link--focus-background-color);
-        outline: var(--ilw-link--focus-outline);
+        color: var(--ilw-color--focus--text);
+        background-color: var(--ilw-color--focus--background);
+        outline-color: var(--ilw-color--focus--outline);
     }
 }
 
@@ -180,13 +174,14 @@
 }
 
 #section-nav-toggle:active {
-    background: var(--ilw-section-nav--toggle--background--active);
+    color: var(--ilw-color--focus--text);
+    background: var(--ilw-color--focus--background);
 }
 
-#section-nav-toggle:focus {
-    color: var(--ilw-link--focus-color);
-    background-color: var(--ilw-link--focus-background-color);
-    outline: var(--ilw-link--focus-outline);
+#section-nav-toggle:is(:focus, [data-simulated-focus] *) {
+    color: var(--ilw-color--focus--text);
+    background-color: var(--ilw-color--focus--background);
+    outline-color: var(--ilw-color--focus--outline);
     outline-offset: -1px; /* Since this element has no spacing around it, make sure the outline is visible */
 }
 
