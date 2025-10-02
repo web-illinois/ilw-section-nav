@@ -1,29 +1,47 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { html, LitElement, unsafeCSS } from "lit";
+// @ts-ignore
 import styles from "./ilw-section-nav.styles.css?inline";
 import "./ilw-section-nav.css";
 import { ManualSlotController } from "./ManualSlotController.js";
 import { classMap } from "lit/directives/class-map.js";
+import { customElement, property, state } from "lit/decorators.js";
 
-const chevron = html`<svg aria-hidden="true" class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.4 23.82">
-      <path fill="currentColor" d="m39.34,1.06c-1.41-1.41-3.7-1.41-5.12,0l-14.02,14.02L6.18,1.06C4.76-.35,2.47-.35,1.06,1.06s-1.41,3.7,0,5.12l16.58,16.58c1.41,1.41,3.7,1.41,5.12,0L39.34,6.18c1.41-1.41,1.41-3.7,0-5.12Z"></path>
-    </svg>`
+const chevron = html` <svg
+    aria-hidden="true"
+    class="chevron"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 40.4 23.82"
+>
+    <path
+        fill="currentColor"
+        d="m39.34,1.06c-1.41-1.41-3.7-1.41-5.12,0l-14.02,14.02L6.18,1.06C4.76-.35,2.47-.35,1.06,1.06s-1.41,3.7,0,5.12l16.58,16.58c1.41,1.41,3.7,1.41,5.12,0L39.34,6.18c1.41-1.41,1.41-3.7,0-5.12Z"
+    ></path>
+</svg>`;
 
-class SectionNav extends LitElement {
-    static shadowRootOptions = {
+@customElement("ilw-section-nav")
+export default class SectionNav extends LitElement {
+    static shadowRootOptions: ShadowRootInit = {
         ...LitElement.shadowRootOptions,
         slotAssignment: "manual",
     };
 
-    static get properties() {
-        return {
-            mode: {},
-            collapse: {},
-            open: { reflect: true },
-            label: {},
-            isRoot: { type: Boolean, attribute: "is-root", reflect: true },
-            _level: { state: true, type: Number },
-        };
-    }
+    @property()
+    mode: string = "";
+
+    @property()
+    collapse: string = "";
+
+    @property({ reflect: true })
+    open: "false" | "true" = "false";
+
+    @property()
+    label: string = "Pages In This Section";
+
+    @property({ reflect: true })
+    isRoot: boolean = true;
+
+    @state()
+    _level: number = 0;
 
     static get styles() {
         return unsafeCSS(styles);
@@ -33,17 +51,11 @@ class SectionNav extends LitElement {
 
     constructor() {
         super();
-        this.mode = "";
-        this.collapse = null;
-        this.open = "false";
-        this.label = "Pages In This Section";
-        this.isRoot = true;
-        this._level = 0;
     }
 
     connectedCallback() {
         super.connectedCallback();
-        let parent = this.parentElement.closest("ilw-section-nav");
+        let parent = this.parentElement?.closest("ilw-section-nav");
         if (!parent) {
             this.isRoot = true;
         } else {
@@ -82,18 +94,18 @@ class SectionNav extends LitElement {
 
             // Because the link and sub-nav need to be inside the same li element,
             // we'll create two slots if needed for that.
-            const double =
-                this.children.item(i + 1) &&
-                this.children.item(i + 1).tagName === "ILW-SECTION-NAV";
+            const item = this.children.item(i + 1);
+            const double = item && item.tagName === "ILW-SECTION-NAV";
             let slot;
             if (double) {
-                slot = html`<slot></slot><slot></slot>`;
+                slot = html` <slot></slot>
+                    <slot></slot>`;
                 ++i;
             } else {
-                slot = html`<slot></slot>`;
+                slot = html` <slot></slot>`;
             }
 
-            inner.push(html`<li class=${classMap(classes)}>${slot}</li>`);
+            inner.push(html` <li class=${classMap(classes)}>${slot}</li>`);
         }
 
         const ul = html`
@@ -160,4 +172,8 @@ class SectionNav extends LitElement {
     }
 }
 
-customElements.define("ilw-section-nav", SectionNav);
+declare global {
+    interface HTMLElementTagNameMap {
+        "ilw-section-nav": SectionNav;
+    }
+}
