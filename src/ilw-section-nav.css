@@ -1,8 +1,8 @@
 ilw-section-nav {
 
     a {
-        color: var(--ilw-section-nav--color);
-        text-decoration: var(--ilw-link--focused-background-color);
+        color: var(--ilw-color--control-text);
+        text-decoration: none;
         display: block;
         padding-top: var(--ilw-section-nav--item--padding-top);
         padding-right: var(--ilw-section-nav--item--padding-right);
@@ -13,7 +13,7 @@ ilw-section-nav {
 
 
         &[aria-current="page"] {
-            color: var(--ilw-section-nav--color--active);
+            color: var(--ilw-color--link-hover);
 
             &:before {
                 content: "";
@@ -29,9 +29,9 @@ ilw-section-nav {
             }
         }
 
-        &:hover {
+        &:is(:hover, [data-simulated-hover] *) {
             text-decoration: underline;
-            color: var(--ilw-section-nav--color--hover);
+            color: var(--ilw-color--link-hover);
         }
 
         &.ilw-section-nav--root {
@@ -40,10 +40,10 @@ ilw-section-nav {
             font-weight: var(--ilw-section-nav--root--font-weight);
         }
 
-        &:focus {
-            color: var(--ilw-link--focus-color);
-            background-color: var(--ilw-link--focus-background-color);
-            outline: var(--ilw-link--focus-outline);
+        &:is(:focus, [data-simulated-focus] *) {
+            color: var(--ilw-color--focus--text);
+            background-color: var(--ilw-color--focus--background);
+            outline-color: var(--ilw-color--focus--outline);
 
             /* Keep inside the nav item so it doesn't get cut off */
             outline-offset: -1px;
@@ -54,7 +54,7 @@ ilw-section-nav {
         font-size: var(--ilw-section-nav--root--font-size);
         background: var(--ilw-section-nav--root--background);
         font-weight: var(--ilw-section-nav--root--font-weight);
-        color: var(--ilw-section-nav--color);
+        color: var(--ilw-color--control-text);
         display: block;
         padding: var(--ilw-section-nav--item--padding-top)
             var(--ilw-section-nav--item--padding-right)

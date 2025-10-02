@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Section Nav Component</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.brand.illinois.edu/illinois.css"
+        />
+        <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/latest/ilw-global.css" />
+        <script type="module" src="https://cdn.toolkit.illinois.edu/ilw-icon/1.1.0/ilw-icon.js"></script>
+        <link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/ilw-icon/1.1.0/ilw-icon.css">
+        <script type="module" src="../src/ilw-section-nav.ts"></script>
+    </head>
+    <style>
+        body {
+            padding: 0;
+            font-size: 16px;
+            font-family: var(--il-font-sans);
+            background: #f4f4f4;
+        }
+
+        #grid {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+    <body>
+        <h1>Section Nav Component</h1>
+
+        <main id="grid">
+            <ilw-section-nav id="nav">
+                <a href="/samples/index.html" class="ilw-section-nav--root">Programs of Study</a>
+                <a href="/samples/index.html">Undergraduate Degrees</a>
+                <ilw-section-nav>
+                    <a href="#">Animal Sciences Major</a>
+                    <ilw-section-nav>
+                        <a href="#" aria-current="page">Pre-Veterinary and Medical</a>
+                        <a href="#">Food Animal</a>
+                        <ilw-section-nav>
+                            <a href="#">Deeper</a>
+                            <ilw-section-nav>
+                                <a href="#">And Deeper</a>
+                            </ilw-section-nav>
+                        </ilw-section-nav>
+                        <a href="#">Companion Animal Equine</a>
+                    </ilw-section-nav>
+                    <a href="#">Computer & Animal Science</a>
+                </ilw-section-nav>
+                <a href="#">Undergraduate Degrees</a>
+                <ilw-section-nav>
+                    <a href="#">Some Third Thing</a>
+                </ilw-section-nav>
+                <a href="#">Undergraduate Degrees</a>
+            </ilw-section-nav>
+
+            <ilw-section-nav id="manual" mode="manual">
+                <ul>
+                    <li><a href="#" class="ilw-section-nav--root">Programs of Study</a></li>
+                    <li><a href="#">Undergraduate Degrees</a>
+                        <ul>
+                            <li>
+                                <a href="#">Animal Sciences Major</a>
+                                <ul>
+                                    <li><a href="#" aria-current="page">Pre-Veterinary and Medical</a></li>
+                                    <li><a href="#">Companion Animal Equine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Computer & Animal Science</a>
+                        <ul>
+                            <li><a href="#">Some Third Thing</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </ilw-section-nav>
+        </main>
+
+        <script type="module">
+            import { createVariations } from "@illinois-toolkit/ilw-core";
+            import SectionNav from "../src/ilw-section-nav.js";
+
+            createVariations(
+                document.getElementById("grid"),
+                SectionNav,
+                {
+                    open: ["true", "false", undefined],
+                    collapse: ["true", "false", undefined],
+                    "data-simulated-hover": [undefined, "true"],
+                    "data-simulated-focus": [undefined, "true"],
+                },
+                ["nav", "manual"],
+            );
+        </script>
+    </body>
+</html>

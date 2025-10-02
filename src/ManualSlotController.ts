@@ -1,3 +1,5 @@
+import { LitElement } from "lit";
+
 /**
  * A simple Lit reactive controller to apply manual slotting to a component.
  *
@@ -16,22 +18,12 @@
  * ```
  */
 export class ManualSlotController {
-    /**
-     * @type import("lit").LitElement
-     * @private
-     */
-    _host;
 
-    /**
-     * @type MutationObserver
-     * @private
-     */
-    _observer;
+    _host: LitElement;
 
-    /**
-     * @param {import("lit").LitElement} host
-     */
-    constructor(host) {
+    private _observer: MutationObserver;
+
+    constructor(host: LitElement) {
         this._host = host;
         this._observer = new MutationObserver((list) => {
             this._host.requestUpdate();
@@ -49,10 +41,15 @@ export class ManualSlotController {
      */
     _refreshInternal() {
         let items = Array.from(this._host.children);
-        let slots = Array.from(this._host.shadowRoot.querySelectorAll('slot'));
+        let slotElements = this._host?.shadowRoot?.querySelectorAll("slot");
+        if (!slotElements) {
+            return;
+        }
+        let slots = Array.from(slotElements);
         for (let slot of slots) {
-            if (items.length > 0) {
-                slot.assign(items.shift());
+            let item = items.shift();
+            if (item) {
+                slot.assign(item);
             }
         }
     }
@@ -63,7 +60,7 @@ export class ManualSlotController {
     }
 
     hostConnected() {
-        this._observer.observe(this._host, {childList: true});
+        this._observer.observe(this._host, { childList: true });
     }
 
     disconnect() {
