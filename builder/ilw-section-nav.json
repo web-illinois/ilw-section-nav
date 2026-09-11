@@ -1,12 +1,26 @@
 {
-    "title": "Section Nav",
-    "tag": "ilw-section-nav",
-    "github": "https://github.com/web-illinois/ilw-section-nav/",
-    "type": "web component",
-    "element-name": "ilw-section-nav",
-    "description": "Secondary navigation for a section of a website.",
-    "purpose": "Add secondary navigation for a set of pages.",
-    "toolkit-version": "1.2",
-    "production-version": "1.2",
-    "development-version": "1.2"
+  "title": "Section Nav",
+  "id": "ilw-section-nav",
+  "type": "Web Component",
+  "repository-name": "ilw-section-nav",
+  "description": "Help visitors move through a section of related pages with consistent secondary navigation.",
+  "purpose": "Add secondary navigation for a set of pages.",
+  "customtemplates": [],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.0"
+    }
+  ]
 }
