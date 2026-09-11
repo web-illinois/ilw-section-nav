@@ -1,12 +1,26 @@
 {
-    "title": "Section Nav - Manual",
-    "tag": "ilw-section-nav-manual",
-    "github": "https://github.com/web-illinois/ilw-section-nav/",
-    "type": "web component",
-    "element-name": "ilw-section-nav",
-    "description": "Secondary navigation for a section of a website, without automatic list elements.",
-    "purpose": "Create a secondary navigation without automatic list elements.",
-    "toolkit-version": "1.2",
-    "production-version": "1.2",
-    "development-version": "1.2"
+  "title": "Section Nav - Manual",
+  "id": "ilw-section-nav-manual",
+  "type": "Web Component",
+  "repository-name": "ilw-section-nav",
+  "description": "Build secondary navigation for a group of related pages while supplying your own link structure and markup.",
+  "purpose": "Create a secondary navigation without automatic list elements.",
+  "customtemplates": [],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.2"
+    }
+  ]
 }
