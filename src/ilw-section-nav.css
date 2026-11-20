@@ -225,3 +225,8 @@ ilw-section-nav[mode="manual"] {
         }
     }
 }
+
+.ilw-sticky-sidebar ilw-section-nav {
+    position: sticky;
+    top: 0;
+}
