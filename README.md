@@ -59,6 +59,10 @@ Typically, the first link in the section navigation is the root page of the sect
 styling can be added by giving the first link the class `ilw-section-nav--root`, as shown
 in the example below.
 
+## Sticky mode
+
+If you are using this with the `ilw-page` control, you can set the class to `ilw-sticky-sidebar`. This will set the page overflow to inherit and change the sidenav CSS to `position: sticky; top: 0;`. 
+
 ## Code Examples
 
 ### Automatic Mode

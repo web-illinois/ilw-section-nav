@@ -2,8 +2,6 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
     test: {
-        css: true,
-        setupFiles: "./vitest.setup.ts",
         browser: {
             enabled: true,
             provider: "playwright",
@@ -17,6 +15,5 @@ export default defineConfig({
             "/*.config.*",
             "**/test-axe/**",
         ],
-        testTimeout: 4_000
     },
 });
